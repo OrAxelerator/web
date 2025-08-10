@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOYEUX ANNIV MAURICE</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+<section id="scenes1">
+    <button class="cta " id="cta1">OUVRIR</button>
+    <img src="ressource/images/envellope.png" class="envellope" id="envellope">
+
+
+
+    
+<img src="ressource/images/lettre.avif" class="lettre" id="lettre">
+<a href="index2.html" target="_blank"><button class="cta2" id="cta2"  > OUVRIR LE CADEAU  </button></a>
+
+    <script>
+        let cta1 = document.getElementById("cta1");
+        let cta2 = document.getElementById("cta2");
+        
+
+        cta1.classList.add("apparitionCta")
+
+        cta1.addEventListener("click",function() {
+            console.log("cta1")
+            cta1.classList.add("dissolve")
+
+            envellope = document.getElementById("envellope")
+            envellope.classList.add("up")
+
+            lettre = document.getElementById("lettre")
+            lettre.classList.add("bottomToUp")
+
+            
+            
+            
+            cta2.style.opacity = "100%"
+     
+
+        });
+              
+          
+            console.log(cta2)
+            cta2.addEventListener("click", function() {
+                console.log("dissolve")
+                envellope.style.opacity = "0"
+                lettre.classList.add("dissolve")
+            })
+
+
+
+
+    </script>
+
+
+<!-- faire modif main écrite sur img, imprimer puis scanner-->
+</section>
+
+
+
+
+
+
+
+
+</body>
+</html>
