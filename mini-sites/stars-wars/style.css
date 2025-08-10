@@ -1,0 +1,246 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flumiere-a.akamaihd.net%2Fv1%2Fimages%2Fstar-wars-backgrounds-25_bc15ec98.jpeg&f=1&nofb=1&ipt=6c059df35bc6452e23ce1743b9e2274061619456737cd5a512317ff1285e3b05&ipo=images');
+    color: #333;
+}
+
+header {
+    background-color: #33333377;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    border-radius: 0px 0px 15px 15px;
+    transition: background-color 0.5s ease;
+}
+
+header:hover {
+    background-color : #333;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+#presentation {
+    background-color:rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 15px;
+
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+#presentation:hover {
+    background-color: #fff;
+    transform: scale(1.07);
+}
+
+.titreCentre {
+    text-align: center;
+}
+
+
+.personnage, .film {
+    background-color:rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin: 1rem;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    transition: transform 0.3s ease , background-color 0.3s ease;
+}
+
+.film:hover {
+    background-color:#fff;
+    transform: scale(1.07);
+}
+
+.personnage:hover {
+    background-color: #fff;
+    transform: scale(1.07);
+}
+
+
+
+
+.filmContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.persoContainer {
+    display: flex;
+    justify-content: center;
+}
+
+
+.perso1Container {
+    background-color:rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px;
+    padding-bottom: 6%;
+    padding-top: 4%;
+    margin-top: 55px;
+    
+
+}
+
+.perso1 {
+    background-color:rgba(255, 255, 255, 0.5);;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    width: 90%;
+    height: 50%;
+    padding-bottom: 35px;
+    display: flex;
+    margin-left: 5%;
+   
+    
+    
+    transition: transform 0.3s ease , background-color 0.3s ease;
+}
+
+.perso1:hover {
+    background-color: #fff;
+    transform: scale(1.02);
+}
+
+.imgTxt {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 2%
+}
+.txtPerso1 {
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: start;
+    margin-top: 6%;
+
+}
+
+
+h2 {
+    color : yellow;
+    text-decoration: underline;
+    text-align: center;
+}
+
+h1 {
+    color : white;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+
+h1:hover {
+    color : yellow;
+}
+
+a {
+    color : white;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color : yellow;
+} 
+
+img {
+    height: 300px;
+    border-radius: 45px;
+    transition: transform 0.7s ease , box-shadow 0.3s ease;
+}
+
+#musicImage {
+    height: 300px;
+    border-radius: 45px;
+    transition: transform 0.7s ease , box-shadow 0.3s ease;
+}
+#musicImage:hover {
+    transform: scale(1.1) ;
+    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.7);
+}
+
+
+
+img:hover {
+    transform: scale(1.03) , rotate(1.5deg);
+    box-shadow: 0 0 15px 5px rgba(255, 255, 0, 0.7);
+}
+
+
+
+.imgB {
+    height: 300px;
+    border-radius: 45px;
+    transition: transform 0.7s ease , box-shadow 0.3s ease;
+}
+
+.imgB:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px 5px rgba(0, 174, 255, 0.7);
+}
+
+.imgV {
+    height: 300px;
+    border-radius: 45px;
+    transition: transform 0.7s ease , box-shadow 0.3s ease;
+}
+
+.imgV:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px 5px rgba(0, 255, 51, 0.7);
+}
+
+
+.image2{
+    border-radius: 0px;
+}
+
+
+.imgR {
+    transition: transform 0.7s ease
+}
+
+.imgR:hover {
+    transform: rotate(3deg);
+}
+
+.imgR2 {
+    transition: transform 0.7s ease 
+}
+
+.imgR2:hover {
+    transform: rotate(-3deg);
+}
