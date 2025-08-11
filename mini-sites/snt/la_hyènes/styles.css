@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    
+    background-image: url("https://www.papierpeintpanoramique.fr/media/catalog/product/cache/871f459736130e239a3f5e6472128962/w/0/w02989-small.jpg");
+    display: inline-block;
+    background-size: cover;
+    font-family:Fira Sans, Courier New;
+
+    backdrop-filter: blur(10px);
+    
+
+   
+    
+}
+
+
+
+h1{
+    color:brown;
+    font-family:Fira Sans,Tahoma;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 5px;
+}
+
+
+
+
+
+img {
+    width : 400px;
+    height : 300px;
+    border-radius: 15px;
+
+}
+
+
+
+p {
+    text-align: center;
+    color : white;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+ul , li {
+    color :white;
+    text-align: center;
+
+}
+
+.underline {
+    text-decoration: underline;
+}
+.image1 {
+    display: block;
+    margin: 0 auto;
+}
+.image2{
+    display:block;
+    margin: 0 auto;
+
+}
+
+.image3{
+    display:block;
+    margin: 0 auto;
+}
+
+.image4 {
+    display: block;
+    margin: 0 auto;
+}
+
+.image5{
+    display:block;
+    margin: 0 auto;
+}
+
+.image6{
+    height: 65px;
+    width: 75px;
+}
+
+.container {
+    
+    background-color: black;
+    border-radius: 45px 45px 0px 0px;
+    margin-bottom: -15px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+}
+
+a {
+    color:brown;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+

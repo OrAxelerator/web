@@ -1,35 +1,150 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOYEUX ANNIV MAURICE</title>
-     <link rel="stylesheet" href="style2.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JOYEUX ANNIV MAURICE</title>
+  <link rel="stylesheet" href="style2.css" />
+  <style type="text/css">
+    #scenes1 {
+      width: 100%;
+      height: 100dvh;
+      background-color: #FAF9F2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative; /* nécessaire pour les positionnements absolus internes */
+    }
+
+    .envellope {
+      transform: translateY(300%);
+      width: 25%;
+      animation: bottom_mid 2s ease forwards;
+    }
+
+    /* Animation montée */
+    @keyframes bottom_mid {
+      0% {
+        transform: translateY(300%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .cta {
+      position: absolute;
+      animation: apparition 3s forwards ease-out;
+      background-color: #E1DCCF;
+      border-radius: 30px;
+      border: 2px solid #CBC0AA;
+      padding: 16px 36px;
+      font-size: 40px;
+      color: #8C7A5E;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .dissolve {
+      animation: dissolve 2s ease forwards;
+    }
+
+    @keyframes dissolve {
+      0% {
+        opacity: 100%;
+      }
+      100% {
+        opacity: 0%;
+      }
+    }
+
+    .up {
+      animation: up 2s ease forwards;
+    }
+
+    @keyframes up {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-300%);
+      }
+    }
+
+    @keyframes apparition {
+      0% {
+        transform: scale(0);
+      }
+      40% {
+        transform: scale(0);
+      }
+      80% {
+        transform: scale(1);
+      }
+    }
+
+    .bottomToUp {
+      animation: bottom_mid 2s ease forwards;
+    }
+
+    .lettre {
+      transform: translateY(-300%);
+      position: absolute;
+      width: 50%;
+      height: 100dvh;
+    }
+
+    .cta2 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0%;
+      bottom: 0;
+      background-color: #E1DCCF;
+      border-radius: 30px;
+      border: 2px solid #CBC0AA;
+      padding: 16px 36px;
+      font-size: 40px;
+      color: #8C7A5E;
+      font-weight: bold;
+      cursor: pointer;
+      transition: opacity 0.5s ease;
+    }
+
+    /* Pour afficher le bouton avec opacité à 100% (ajoute cette classe via JS si besoin) */
+    .visible {
+      opacity: 100%;
+    }
+  </style>
 </head>
 <body>
+  <section id="scenes1">
+
+
+
+
+
+
     
+    <button id="playBtn" class="cta2 visible">Lancer la musique</button>
+  </section>
 
-<section id="scenes1">
-    <button class="cta " id="cta1">OUVRIR</button>
+  <audio id="myAudio" loop preload="auto">
+    <source src="ressource/anniv.mp3" type="audio/mpeg" />
+    Ton navigateur ne supporte pas la balise audio.
+  </audio>
 
+  <script>
+    const playBtn = document.getElementById("playBtn");
+    const audio = document.getElementById("myAudio");
 
-
-
-    
-
-
-
-
-
-
-</section>
-
-
-
-
-
-
-
-
+    playBtn.addEventListener("click", () => {
+      audio.play().catch((e) => {
+        console.error("Erreur lors de la lecture audio:", e);
+      });
+      playBtn.style.display = "none"; // cache le bouton après clic
+    });
+  </script>
 </body>
 </html>
