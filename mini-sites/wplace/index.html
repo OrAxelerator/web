@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Responsive avec Header et Section Finale</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #e0f0ff;
+        background-image: url("TON_IMAGE_DE_FOND.jpg"); /* Remplace ici */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+        padding: 40px 20px;
+        text-align: center;
+        background: rgba(255,255,255,0.85);
+        border-bottom: 2px solid #b0d8ff;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+        color: #0077cc;
+        margin: 0;
+    }
+    h3 { 
+        color: #0077cc;
+        margin: 0;
+    }
+
+    /* Container des cards */
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        max-width: 1000px;
+        margin: 30px auto;
+        padding: 0 20px;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 14px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        border: 2px solid #b0d8ff;
+        min-height: 350px; /* moins haut qu'avant */
+    }
+
+    /* Images avec flèche */
+    .images {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+        justify-content: center;
+    }
+
+    .images img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid #80bfff;
+    }
+
+    .arrow {
+        font-size: 24px;
+        font-weight: bold;
+        color: #3399ff;
+    }
+
+    /* Séparateur */
+    hr {
+        border: none;
+        border-top: 1px solid #ddd;
+        margin: 15px 0;
+    }
+
+    /* Liste des réseaux */
+    .social {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .social li a {
+        text-decoration: none;
+        color: #0077cc;
+        font-weight: bold;
+        transition: 0.3s;
+        padding: 5px 10px;
+        border-radius: 6px;
+        background: #d6ecff;
+    }
+
+    .social li a:hover {
+        background: #b5deff;
+        color: #005fa3;
+    }
+
+    /* Description */
+    .description {
+        text-align: center;
+        font-size: 15px;
+        color: #333;
+    }
+
+    /* Section finale */
+    .final-section {
+        background: rgba(255,255,255,0.95);
+        padding: 60px 20px;
+        text-align: center;
+        border-top: 2px solid #b0d8ff;
+        margin-top: 40px;
+    }
+
+    .final-section h2 {
+        font-size: 2rem;
+        color: #0077cc;
+        margin-bottom: 20px;
+    }
+
+    .final-section button {
+        font-size: 18px;
+        padding: 15px 30px;
+        background: #3399ff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .final-section button:hover {
+        background: #0077cc;
+    }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <h1>L'aliance les trou du Q du web</h1>
+    <h3>4 Membres acifs + plusieurs membres</h3>
+</header>
+
+<!-- Cards -->
+<div class="container">
+    <!-- Card 1 -->
+    <div class="card">
+        <div class="images">
+            <img src="minecraft-ora.png" alt="Profil 1">
+            <span class="arrow">&gt;</span>
+            <img src="ora-yt.jpg" alt="Profil 2">
+        </div>
+        <hr>
+        <ul class="social">
+                        <li><a href="https://discord.com/invite/ny6RPdtW33" target="_blank">Discord</a></li>
+            <li><a href="https://www.youtube.com/@OrAxelerator/featured " target="_blank">Youtube</a></li>
+            <li><a href="https://www.youtube.com/@OrA-creation" target="_blank">Youtube 2</a></li>
+            <li><a href="https://github.com/OrAxelerator" target="_blank">Github</a></li>
+        </ul>
+        <hr>
+        <div class="description">
+            Discord : oraxelerator => DM ouvert
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+        <div class="images">
+            <img src="minecraft-hiro.png" alt="Profil 1">
+            <span class="arrow">&gt;</span>
+            <img src="hiro-yt.png" alt="Profil 2">
+        </div>
+        <hr>
+        <ul class="social">
+            <li><a href="https://www.youtube.com/channel/UCQEhJnWjxDN3o1oMdLLxqBA" target="_blank">YouTube</a></li>
+        </ul>
+        <hr>
+        <div class="description">
+            Une autre description inspirante pour cette carte.
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+        <div class="images">
+            <img src="minecraft-prisme.png" alt="Profil 1">
+            <span class="arrow">&gt;</span>
+            <img src="https://via.placeholder.com/200" alt="Profil 2">
+        </div>
+        <hr>
+        <ul class="social">
+            <li><a href="#">Youtube</a></li>
+
+        </ul>
+        <hr>
+        <div class="description">
+            Dernière carte avec un petit texte centré.
+        </div>
+    </div>
+</div>
+
+<!-- Section finale -->
+<div class="final-section">
+    <h2>Prêt à découvrir plus ?</h2>
+    <button>Rejoignez-nous</button>
+</div>
+
+</body>
+</html>
