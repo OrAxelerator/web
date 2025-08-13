@@ -55,7 +55,6 @@
         flex-direction: column;
         padding: 20px;
         border: 2px solid #b0d8ff;
-        min-height: 350px; /* moins haut qu'avant */
     }
 
     /* Images avec flèche */
@@ -65,6 +64,7 @@
         gap: 15px;
         margin-bottom: 15px;
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     .images img {
@@ -121,13 +121,53 @@
         color: #333;
     }
 
+    /* Section images-cards */
+    .image-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 40px 20px;
+        margin: auto;
+    }
+
+    .image-card {
+        background: rgba(255,255,255,0.9);
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+        border: 2px solid #b0d8ff;
+        transition: transform 0.3s;
+    }
+
+    .image-card:hover {
+        transform: scale(1.03);
+    }
+
+    /* Images en bas adaptatives */
+    .image-card img {
+        width: 100%;
+        height: auto; /* conserve proportions */
+        max-height: 500px; /* limite visuelle */
+        object-fit: contain; /* pas de découpe */
+        background: #fff; /* fond neutre autour de l'image */
+        display: block;
+    }
+
+    .image-card p {
+        padding: 15px;
+        text-align: center;
+        font-weight: bold;
+        color: #0077cc;
+        margin: 0;
+    }
+
     /* Section finale */
     .final-section {
         background: rgba(255,255,255,0.95);
         padding: 60px 20px;
         text-align: center;
         border-top: 2px solid #b0d8ff;
-        margin-top: 40px;
+        margin-top: auto;
     }
 
     .final-section h2 {
@@ -156,8 +196,8 @@
 
 <!-- Header -->
 <header>
-    <h1>L'aliance les trou du Q du web</h1>
-    <h3>4 Membres acifs + plusieurs membres</h3>
+    <h1>L'alliance les trous du Q du web</h1>
+    <h3>4 Membres actifs + plusieurs membres</h3>
 </header>
 
 <!-- Cards -->
@@ -171,8 +211,8 @@
         </div>
         <hr>
         <ul class="social">
-                        <li><a href="https://discord.com/invite/ny6RPdtW33" target="_blank">Discord</a></li>
-            <li><a href="https://www.youtube.com/@OrAxelerator/featured " target="_blank">Youtube</a></li>
+            <li><a href="https://discord.com/invite/ny6RPdtW33" target="_blank">Discord</a></li>
+            <li><a href="https://www.youtube.com/@OrAxelerator/featured" target="_blank">Youtube</a></li>
             <li><a href="https://www.youtube.com/@OrA-creation" target="_blank">Youtube 2</a></li>
             <li><a href="https://github.com/OrAxelerator" target="_blank">Github</a></li>
         </ul>
@@ -195,7 +235,7 @@
         </ul>
         <hr>
         <div class="description">
-            Une autre description inspirante pour cette carte.
+            <p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">LA</a></p>
         </div>
     </div>
 
@@ -204,24 +244,51 @@
         <div class="images">
             <img src="minecraft-prisme.png" alt="Profil 1">
             <span class="arrow">&gt;</span>
-            <img src="https://via.placeholder.com/200" alt="Profil 2">
+            <img src="prisme-yt.jpg" alt="Profil 2">
         </div>
         <hr>
         <ul class="social">
-            <li><a href="#">Youtube</a></li>
-
+            <li><a href="https://www.youtube.com/@PrismeSky" target="_blank">Youtube</a></li>
         </ul>
         <hr>
         <div class="description">
-            Dernière carte avec un petit texte centré.
+            <p>...</p>
         </div>
+    </div>
+</div>
+
+<!-- Images en forme de cartes -->
+<div class="image-cards">
+    <div class="image-card">
+        <img src="art-tableua.png" alt="Image 1">
+        <p>Projet spécial #1</p>
+    </div>
+    <div class="image-card">
+        <img src="art-prisme.png" alt="Image 2">
+        <p>Projet spécial #2</p>
+    </div>
+    <div class="image-card">
+        <img src="art-panchiko.png" alt="Image 3">
+        <p>Projet spécial #3</p>
+    </div>
+    <div class="image-card">
+        <img src="art-mc.png" alt="Image 4">
+        <p>Projet spécial #4</p>
+    </div>
+    <div class="image-card">
+        <img src="art-ultra.png" alt="Image 5">
+        <p>Projet spécial #5</p>
+    </div>
+    <div class="image-card">
+        <img src="art-lacoste.png" alt="Image 6">
+        <p>Projet spécial #6</p>
     </div>
 </div>
 
 <!-- Section finale -->
 <div class="final-section">
-    <h2>Prêt à découvrir plus ?</h2>
-    <button>Rejoignez-nous</button>
+    <h2>Prêt à rejoindre ?</h2>
+   <!-- <button>Rejoignez-nous</button>-->
 </div>
 
 </body>
