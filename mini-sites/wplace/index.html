@@ -9,7 +9,7 @@
         font-family: Arial, sans-serif;
         margin: 0;
         background: #e0f0ff;
-        background-image: url("TON_IMAGE_DE_FOND.jpg"); /* Remplace ici */
+        background-image: url("TON_IMAGE_DE_FOND.jpg");
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -34,12 +34,13 @@
     h3 { 
         color: #0077cc;
         margin: 0;
+        font-size: 1.2rem;
     }
 
     /* Container des cards */
     .container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 25px;
         max-width: 1000px;
         margin: 30px auto;
@@ -81,14 +82,12 @@
         color: #3399ff;
     }
 
-    /* Séparateur */
     hr {
         border: none;
         border-top: 1px solid #ddd;
         margin: 15px 0;
     }
 
-    /* Liste des réseaux */
     .social {
         list-style: none;
         padding: 0;
@@ -114,7 +113,6 @@
         color: #005fa3;
     }
 
-    /* Description */
     .description {
         text-align: center;
         font-size: 15px;
@@ -124,10 +122,12 @@
     /* Section images-cards */
     .image-cards {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 20px;
         padding: 40px 20px;
         margin: auto;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .image-card {
@@ -143,13 +143,12 @@
         transform: scale(1.03);
     }
 
-    /* Images en bas adaptatives */
     .image-card img {
         width: 100%;
-        height: auto; /* conserve proportions */
-        max-height: 500px; /* limite visuelle */
-        object-fit: contain; /* pas de découpe */
-        background: #fff; /* fond neutre autour de l'image */
+        height: auto;
+        max-height: 400px;
+        object-fit: contain;
+        background: #fff;
         display: block;
     }
 
@@ -190,7 +189,47 @@
     .final-section button:hover {
         background: #0077cc;
     }
+
+    /* RESPONSIVE FIXES */
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 1.8rem;
+        }
+        h3 {
+            font-size: 1rem;
+        }
+        .images img {
+            width: 80px;
+            height: 80px;
+        }
+        .arrow {
+            font-size: 18px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        header {
+            padding: 20px 10px;
+        }
+        .container {
+            grid-template-columns: 1fr;
+        }
+        .image-cards {
+            grid-template-columns: 1fr;
+        }
+        .card {
+            padding: 15px;
+        }
+        .social li a {
+            font-size: 14px;
+            padding: 5px;
+        }
+        .final-section h2 {
+            font-size: 1.5rem;
+        }
+    }
 </style>
+
 </head>
 <body>
 
@@ -218,6 +257,7 @@
         </ul>
         <hr>
         <div class="description">
+            Un gars qui aime manger des cartes graphiques.<br>
             Discord : oraxelerator => DM ouvert
         </div>
     </div>
@@ -261,7 +301,7 @@
 <div class="image-cards">
     <div class="image-card">
         <img src="art-tableua.png" alt="Image 1">
-        <p>Projet spécial #1</p>
+        <p><a href="https://fr.wikipedia.org/wiki/Message_d%27Arecibo" target="_blank">Message d'arecibo</a></p>
     </div>
     <div class="image-card">
         <img src="art-prisme.png" alt="Image 2">
@@ -269,25 +309,26 @@
     </div>
     <div class="image-card">
         <img src="art-panchiko.png" alt="Image 3">
-        <p>Projet spécial #3</p>
+        <p><a href="https://www.youtube.com/watch?v=xlX7NwTq9Zo">Death metal</a> cover, PANCHIKO</p>
     </div>
     <div class="image-card">
         <img src="art-mc.png" alt="Image 4">
-        <p>Projet spécial #4</p>
+        <p>Notre siège</p>
     </div>
     <div class="image-card">
-        <img src="art-ultra.png" alt="Image 5">
-        <p>Projet spécial #5</p>
+        <img src="art-ultrakill.png" alt="Image 5">
+        <p>V1 vs Sword-Machine (ULTRAKILL)</p>
     </div>
     <div class="image-card">
         <img src="art-lacoste.png" alt="Image 6">
-        <p>Projet spécial #6</p>
+        <p>Lacoste a Lacoste ..</p>
     </div>
 </div>
 
 <!-- Section finale -->
 <div class="final-section">
     <h2>Prêt à rejoindre ?</h2>
+    <h4>=> Viens dm discord 'oraxelerator' </h4>
    <!-- <button>Rejoignez-nous</button>-->
 </div>
 
