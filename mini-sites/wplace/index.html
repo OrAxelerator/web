@@ -3,231 +3,290 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Site Responsive avec Header et Section Finale</title>
+<title>Les Trou du Q du WEB</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background: #e0f0ff;
-        background-image: url("TON_IMAGE_DE_FOND.jpg");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #fdfeff;
+    background-image: url("fond.png");
+    backdrop-filter: blur(5px);
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-    /* Header */
-    header {
-        padding: 40px 20px;
-        text-align: center;
-        background: rgba(255,255,255,0.85);
-        border-bottom: 2px solid #b0d8ff;
-    }
+/* Header */
+header {
+    padding: 40px 20px;
+    text-align: center;
+    background: rgba(255,255,255,0.85);
+    border-bottom: 2px solid #b0d8ff;
+}
 
-    header h1 {
+.midle {
+    padding: 40px 20px;
+    text-align: center;
+    background: rgba(255,255,255,0.85);
+    border-bottom: 2px solid #b0d8ff;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 35px;
+}
+.midle h1 {
         font-size: 2.5rem;
-        color: #0077cc;
-        margin: 0;
-    }
-    h3 { 
-        color: #0077cc;
-        margin: 0;
-        font-size: 1.2rem;
-    }
+    color: #0077cc;
+    margin: 0;
+}
 
-    /* Container des cards */
-    .container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 25px;
-        max-width: 1000px;
-        margin: 30px auto;
-        padding: 0 20px;
-    }
+header h1 {
+    font-size: 2.5rem;
+    color: #0077cc;
+    margin: 0;
+}
+h3 { 
+    color: #0077cc;
+    margin: 0;
+    font-size: 1.2rem;
+}
 
-    .card {
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 14px;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.12);
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        border: 2px solid #b0d8ff;
-    }
+/* Container des cards */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
 
-    /* Images avec flèche */
-    .images {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        margin-bottom: 15px;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 2px solid #b0d8ff;
+    transition: transform 0.4s ease;
+}
 
+.card:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.07);
+}
+
+/* Images avec flèche */
+.images {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.images img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #80bfff;
+}
+
+.arrow {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3399ff;
+}
+
+hr {
+    border: none;
+    border-top: 3px solid #ddd;
+    margin: 15px 0;
+}
+
+.social {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.social li a {
+    text-decoration: none;
+    color: #0077cc;
+    font-weight: bold;
+    transition: 0.3s;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background: #d6ecff;
+}
+
+.social li a:hover {
+    background: #b5deff;
+    color: #005fa3;
+}
+
+.description {
+    text-align: center;
+    font-size: 15px;
+    color: #333;
+}
+
+/* Section images-cards */
+.image-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    margin: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.image-card {
+    background: rgba(255,255,255,0.9);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    border: 2px solid #b0d8ff;
+    transition: transform 0.3s;
+}
+
+.image-card:hover {
+    transform: scale(1.03);
+    
+    background: rgba(255,255,255,1);
+    box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.7);
+
+}
+
+.image-card img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    background: #fff;
+    display: block;
+}
+
+.image-card p {
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: #0077cc;
+    margin: 0;
+}
+
+/* Carte "Notre siège" plus grande */
+.image-card.siege {
+    grid-column: span 2;
+}
+.image-card.siege img {
+    max-height: 600px;
+}
+
+/* Bouton musique stylisé */
+#playMusic {
+    display: block;
+    margin: 15px auto;
+    padding: 15px 20px;
+    background: #3399ff;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+#playMusic:hover {
+    background: #0077cc;
+    transform: scale(1.05);
+}
+
+/* Section finale */
+.final-section {
+    background: rgba(255,255,255,0.95);
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 2px solid #b0d8ff;
+    margin-top: auto;
+}
+
+.final-section h2 {
+    font-size: 2rem;
+    color: #0077cc;
+    margin-bottom: 20px;
+}
+
+.final-section button {
+    font-size: 18px;
+    padding: 15px 30px;
+    background: #3399ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.final-section button:hover {
+    background: #0077cc;
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
     .images img {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        border-radius: 10px;
-        border: 2px solid #80bfff;
+        width: 80px;
+        height: 80px;
     }
-
     .arrow {
-        font-size: 24px;
-        font-weight: bold;
-        color: #3399ff;
-    }
-
-    hr {
-        border: none;
-        border-top: 1px solid #ddd;
-        margin: 15px 0;
-    }
-
-    .social {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-    }
-
-    .social li a {
-        text-decoration: none;
-        color: #0077cc;
-        font-weight: bold;
-        transition: 0.3s;
-        padding: 5px 10px;
-        border-radius: 6px;
-        background: #d6ecff;
-    }
-
-    .social li a:hover {
-        background: #b5deff;
-        color: #005fa3;
-    }
-
-    .description {
-        text-align: center;
-        font-size: 15px;
-        color: #333;
-    }
-
-    /* Section images-cards */
-    .image-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 20px;
-        padding: 40px 20px;
-        margin: auto;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .image-card {
-        background: rgba(255,255,255,0.9);
-        border-radius: 14px;
-        overflow: hidden;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.12);
-        border: 2px solid #b0d8ff;
-        transition: transform 0.3s;
-    }
-
-    .image-card:hover {
-        transform: scale(1.03);
-    }
-
-    .image-card img {
-        width: 100%;
-        height: auto;
-        max-height: 400px;
-        object-fit: contain;
-        background: #fff;
-        display: block;
-    }
-
-    .image-card p {
-        padding: 15px;
-        text-align: center;
-        font-weight: bold;
-        color: #0077cc;
-        margin: 0;
-    }
-
-    /* Section finale */
-    .final-section {
-        background: rgba(255,255,255,0.95);
-        padding: 60px 20px;
-        text-align: center;
-        border-top: 2px solid #b0d8ff;
-        margin-top: auto;
-    }
-
-    .final-section h2 {
-        font-size: 2rem;
-        color: #0077cc;
-        margin-bottom: 20px;
-    }
-
-    .final-section button {
         font-size: 18px;
-        padding: 15px 30px;
-        background: #3399ff;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: background 0.3s;
     }
+    .image-card.siege {
+        grid-column: span 1;
+    }
+}
 
-    .final-section button:hover {
-        background: #0077cc;
+@media (max-width: 480px) {
+    header {
+        padding: 20px 10px;
     }
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .image-cards {
+        grid-template-columns: 1fr;
+    }
+    .card {
+        padding: 15px;
+    }
+    .social li a {
+        font-size: 14px;
+        padding: 5px;
+    }
+    .final-section h2 {
+        font-size: 1.5rem;
+    }
+}
 
-    /* RESPONSIVE FIXES */
-    @media (max-width: 768px) {
-        header h1 {
-            font-size: 1.8rem;
-        }
-        h3 {
-            font-size: 1rem;
-        }
-        .images img {
-            width: 80px;
-            height: 80px;
-        }
-        .arrow {
-            font-size: 18px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        header {
-            padding: 20px 10px;
-        }
-        .container {
-            grid-template-columns: 1fr;
-        }
-        .image-cards {
-            grid-template-columns: 1fr;
-        }
-        .card {
-            padding: 15px;
-        }
-        .social li a {
-            font-size: 14px;
-            padding: 5px;
-        }
-        .final-section h2 {
-            font-size: 1.5rem;
-        }
-    }
 </style>
 
 </head>
@@ -297,32 +356,87 @@
     </div>
 </div>
 
+
+<div class="midle">
+    <h1>Nos construction : </h1>
+</div>
+
+
 <!-- Images en forme de cartes -->
 <div class="image-cards">
     <div class="image-card">
         <img src="art-tableua.png" alt="Image 1">
         <p><a href="https://fr.wikipedia.org/wiki/Message_d%27Arecibo" target="_blank">Message d'arecibo</a></p>
     </div>
+
+  <div class="image-card siege">
+    <img src="siege.png" alt="Image 4">
+    <a href="https://wplace.live/?lat=43.666854623966444&lng=3.5051656842773387&zoom=15" target="_blank">
+        <p>Notre siège</p>
+    </a>
+</div>
+
+<div class="image-card">
+    <img src="art-music.png" alt="Image 6">
+    <p>Musique.</p>
+   
+    
+    <button id="playMusic">Jouer le son.</button>
+    <p id="secret"></p>
+    <audio id="musicPlayer" src="music.mp3"></audio>
+</div>
+
+<script>
+    const button = document.getElementById('playMusic');
+    const player = document.getElementById('musicPlayer');
+    const message = document.getElementById('secret');
+    button.addEventListener('click', () => {
+        if (player.paused) {
+            player.play();
+            button.textContent = '⏸ Pause';
+            message.innerText = "C'est vraiment ce son qui est jouer XD"
+        } else {
+            player.pause();
+            button.textContent = '▶ Jouer le son';
+        }
+    });
+</script>
+  
     <div class="image-card">
         <img src="art-prisme.png" alt="Image 2">
-        <p>Projet spécial #2</p>
+        <p>Projet anime</p>
     </div>
+
+
+
+
     <div class="image-card">
         <img src="art-panchiko.png" alt="Image 3">
         <p><a href="https://www.youtube.com/watch?v=xlX7NwTq9Zo">Death metal</a> cover, PANCHIKO</p>
     </div>
-    <div class="image-card">
-        <img src="art-mc.png" alt="Image 4">
-        <p>Notre siège</p>
-    </div>
-    <div class="image-card">
+
+
+
+
+
+
+
+    <div class="image-card" >
         <img src="art-ultrakill.png" alt="Image 5">
         <p>V1 vs Sword-Machine (ULTRAKILL)</p>
     </div>
+
+
+
     <div class="image-card">
         <img src="art-lacoste.png" alt="Image 6">
         <p>Lacoste a Lacoste ..</p>
     </div>
+
+
+
+
+
 </div>
 
 <!-- Section finale -->
