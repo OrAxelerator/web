@@ -9,7 +9,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     background: #fdfeff;
-    background-image: url("fond.png");
+    background-image: url("ressource/art/fond.png");
     backdrop-filter: blur(5px);
     background-blend-mode: darken;
     background-size: cover;
@@ -78,7 +78,7 @@ h3 {
 
 .card:hover {
     background: rgba(255, 255, 255, 1);
-    transform: scale(1.07);
+    transform: scale(1.05);
 }
 
 /* Images avec flèche */
@@ -166,7 +166,7 @@ hr {
     transform: scale(1.03);
     
     background: rgba(255,255,255,1);
-    box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.7);
+    box-shadow: 0 0 10px 3px rgba(0, 123, 255, 0.6);
 
 }
 
@@ -221,13 +221,15 @@ hr {
     padding: 60px 20px;
     text-align: center;
     border-top: 2px solid #b0d8ff;
+    border-bottom: 2px solid #b0d8ff;
     margin-top: auto;
+    
 }
 
 .final-section h2 {
     font-size: 2rem;
     color: #0077cc;
-    margin-bottom: 20px;
+    
 }
 
 .final-section button {
@@ -295,7 +297,7 @@ hr {
 <!-- Header -->
 <header>
     <h1>L'alliance les trous du Q du web</h1>
-    <h3>4 Membres actifs + plusieurs membres</h3>
+    <h3>4 Membres actifs + plusieurs membres : </h3>
 </header>
 
 <!-- Cards -->
@@ -303,30 +305,32 @@ hr {
     <!-- Card 1 -->
     <div class="card">
         <div class="images">
-            <img src="minecraft-ora.png" alt="Profil 1">
+            <img src="ressource/pp/minecraft-ora.png" alt="Profil 1">
             <span class="arrow">&gt;</span>
-            <img src="ora-yt.jpg" alt="Profil 2">
+            <img src="ressource/pp/ora-yt.jpg" alt="Profil 2">
         </div>
         <hr>
         <ul class="social">
-            <li><a href="https://discord.com/invite/ny6RPdtW33" target="_blank">Discord</a></li>
+            <li><a href="https://discord.gg/Q97uNaKdFu" target="_blank">Discord</a></li>
             <li><a href="https://www.youtube.com/@OrAxelerator/featured" target="_blank">Youtube</a></li>
             <li><a href="https://www.youtube.com/@OrA-creation" target="_blank">Youtube 2</a></li>
             <li><a href="https://github.com/OrAxelerator" target="_blank">Github</a></li>
         </ul>
         <hr>
         <div class="description">
-            Un gars qui aime manger des cartes graphiques.<br>
-            Discord : oraxelerator => DM ouvert
+            <li>Créateur de, l'alliance "les trou du Q du WEB" et de ce site.</li>
+            <li>Un gars qui aime manger des cartes graphiques.</li>
+            <li>Discord : oraxelerator => DM ouvert</li>
+            
         </div>
     </div>
 
     <!-- Card 2 -->
     <div class="card">
         <div class="images">
-            <img src="minecraft-hiro.png" alt="Profil 1">
+            <img src="ressource/pp/minecraft-hiro.png" alt="Profil 1">
             <span class="arrow">&gt;</span>
-            <img src="hiro-yt.png" alt="Profil 2">
+            <img src="ressource/pp/hiro-yt.png" alt="Profil 2">
         </div>
         <hr>
         <ul class="social">
@@ -341,9 +345,9 @@ hr {
     <!-- Card 3 -->
     <div class="card">
         <div class="images">
-            <img src="minecraft-prisme.png" alt="Profil 1">
+            <img src="ressource/pp/minecraft-prisme.png" alt="Profil 1">
             <span class="arrow">&gt;</span>
-            <img src="prisme-yt.jpg" alt="Profil 2">
+            <img src="ressource/pp/prisme-yt.jpg" alt="Profil 2">
         </div>
         <hr>
         <ul class="social">
@@ -358,32 +362,34 @@ hr {
 
 
 <div class="midle">
-    <h1>Nos construction : </h1>
+    <h1>Nos constructions : </h1>
 </div>
 
 
 <!-- Images en forme de cartes -->
 <div class="image-cards">
     <div class="image-card">
-        <img src="art-tableua.png" alt="Image 1">
+        <img src="ressource/art/TQW/art-tableua.png" alt="Image 1">
         <p><a href="https://fr.wikipedia.org/wiki/Message_d%27Arecibo" target="_blank">Message d'arecibo</a></p>
     </div>
 
   <div class="image-card siege">
-    <img src="siege.png" alt="Image 4">
+    <img src="ressource/art/TQW/art-centre.png" alt="Image 4">
     <a href="https://wplace.live/?lat=43.666854623966444&lng=3.5051656842773387&zoom=15" target="_blank">
-        <p>Notre siège</p>
+        <p>Notre siège à Saint andré de sangonis</p>
+
     </a>
+    <p>(clique pour voir)</p>
 </div>
 
 <div class="image-card">
-    <img src="art-music.png" alt="Image 6">
+    <img src="ressource/art/TQW/art-music.png" alt="Image 6">
     <p>Musique.</p>
    
     
     <button id="playMusic">Jouer le son.</button>
     <p id="secret"></p>
-    <audio id="musicPlayer" src="music.mp3"></audio>
+    <audio id="musicPlayer" src="ressource/music.mp3"></audio>
 </div>
 
 <script>
@@ -403,7 +409,7 @@ hr {
 </script>
   
     <div class="image-card">
-        <img src="art-prisme.png" alt="Image 2">
+        <img src="ressource/art/TQW/art-prisme.png" alt="Image 2">
         <p>Projet anime</p>
     </div>
 
@@ -411,29 +417,24 @@ hr {
 
 
     <div class="image-card">
-        <img src="art-panchiko.png" alt="Image 3">
+        <img src="ressource/art/TQW/art-panchiko.png" alt="Image 3">
         <p><a href="https://www.youtube.com/watch?v=xlX7NwTq9Zo">Death metal</a> cover, PANCHIKO</p>
     </div>
 
 
 
 
-
-
-
     <div class="image-card" >
-        <img src="art-ultrakill.png" alt="Image 5">
+        <img src="ressource/art/TQW/art-ultrakill.png" alt="Image 5">
         <p>V1 vs Sword-Machine (ULTRAKILL)</p>
     </div>
 
 
 
     <div class="image-card">
-        <img src="art-lacoste.png" alt="Image 6">
-        <p>Lacoste a Lacoste ..</p>
+        <img src="ressource/art/TQW/art-lacoste.png" alt="Image 6">
+        <p>Lacoste à Lacoste ..</p>
     </div>
-
-
 
 
 
@@ -445,6 +446,108 @@ hr {
     <h4>=> Viens dm discord 'oraxelerator' </h4>
    <!-- <button>Rejoignez-nous</button>-->
 </div>
+
+
+
+   <div class="midle" style="margin-top: 4em;">
+    <h1>Artistes du coin :</h1>
+    
+</div>
+
+
+
+<!-- Images en forme de cartes -->
+<div class="image-cards">
+    <div class="image-card">
+        <img src="ressource/art/autres/jonquière_bacon/jonquiere.png" alt="Image 1">
+        <p><a href="https://wplace.live/?lat=43.673974842548446&lng=3.482138340527325&zoom=14.924902494241975" target="_blank">Bacon, le seul Jonquiérois, qui aime PORTAL visiblement.</a></p>
+    </div>
+
+
+
+    <div class="image-card">
+        <img src="ressource/art/autres/transroad/transroad.png" alt="Image 1">
+        <p>Aurwynn, transgenre,  <br>  transforme l'autoroute en un drapeau trans, allant de montpellier à Saint andré en traversant un Portal, tout ça en solo ! 🏳️‍⚧️</a></p>
+    </div>
+
+
+
+
+
+
+ 
+
+
+
+</div>
+
+
+
+
+
+
+   <div class="midle">
+    <h1>Petite référence local :</h1>
+    <h4>Toutes les images avec le logo : <img src="ressource/ArtParGéo.png" style="width: 3%;"> sont des projets réalisés par le serveur discord <a href="https://discord.gg/QQhaXNXenX" target="_blank">ArtParGéographie </a>de @StardewValleyGeo, allez les aider !</h4>
+    
+</div>
+
+<div class="image-cards">
+
+
+        <div class="image-card">
+        <img src="ressource/art/autres/local/artParGéo/champ.png" alt="Image 1">
+        <p>Création d’un épi de maïs, d’une grappe de raisin et d’une vigne, dans le style Stardew Valley, <a href="https://wplace.live/?lat=43.59636980769049&lng=3.1414742780273435&zoom=15.04183838404589" target="_blank">disposés sur leur champ respectif </a></p>
+    </div>
+
+        <div class="image-card">
+        <img src="ressource/art/autres/local/occi.png" alt="Image 1">
+        <p><a href="https://wplace.live/?lat=43.61571683077357&lng=3.4501461530273323&zoom=16.696674408601897" target="_blank">Pas besoin de description</a></p>
+    </div>
+
+
+    <div class="image-card">
+        <img src="ressource/art/autres/local/diable.png" alt="Image 1">
+        <p><a href="https://wplace.live/?lat=43.707784345197055&lng=3.557372715527319&zoom=16.547230585721064" target="_blank">Le fameux DIABLE </a> au <a href="https://fr.wikipedia.org/wiki/Pont_du_Diable" target="_blank">Pont du diable</a></p>
+    </div>
+
+
+
+    <div class="image-card">
+        <img src="ressource/art/autres/local/ognons.png" alt="Image 1">
+        <p>Qui n'aime pas les fameux <a href="https://wplace.live/?lat=43.49444081771615&lng=3.437138340527329&zoom=13.698382627888083" target="_blank">oignons de Lézignan</a> !</p>
+    </div>
+
+
+    <div class="image-card">
+        <img src="ressource/art/autres/local/desert.png" alt="Image 1">
+        <p>C'est le vrai désert à <a href="https://wplace.live/?lat=43.73370052387274&lng=3.5508688092773335&zoom=15.411604007530592" target="_blank">Saint Guilhem le-Désert</a></p>
+    </div>
+
+
+
+
+
+
+ 
+
+
+
+</div>
+
+<div class="final-section">
+    <h3>Si vous aussi vous avez des histoires/anecdotes à partager, des belles constructions ... <br>veuillez rejoindre le discord </h3>
+    <h4>Je vous accueillerai avec plaisir.</h4>
+<button> <a href="https://discord.gg/Q97uNaKdFu" target="_blank">Le Discord</a></button>
+</div>
+   
+    
+    
+    
+
+
+
+
 
 </body>
 </html>
