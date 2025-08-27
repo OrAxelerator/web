@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PixelsInfo</title>
+  <style>
+    :root {
+      --primary: #1e90ff;
+      --secondary: #00bfff;
+      --bg-light: #f9f9ff;
+      --bg-dark: #111;
+      --text-light: #222;
+      --text-dark: #eee;
+    }
+
+    * {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-light);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      padding:  10px;
+      border-bottom: 1px solid #ddd;
+      background: white;
+      position:fixed;
+    }
+
+    body.dark header {
+      border-color: #444;
+      background: #222;
+    }
+
+    header h1 {
+      margin: 0;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    .dark-toggle {
+      padding: 6px 12px;
+      border: none;
+      background: var(--primary);
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+
+.search-box input {
+  padding: 6px 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #000;
+  width: 120px;
+}
+
+
+body.dark .search-box input {
+  border: 1px solid #555;
+  background: #1e1e1e;
+  color: #f0f0f0;
+}
+
+    main {
+      display: flex;
+      flex-direction: row;
+      height: calc(100vh - 60px);
+      width: 100%;
+    }
+
+    aside {
+      width: 300px;
+      border-right: 1px solid #ddd;
+      overflow-y: auto;
+      padding: 10px;
+      background: white;
+    }
+
+    body.dark aside {
+      background: #222;
+      border-color: #444;
+    }
+
+    .article-list-item {
+      display: flex;
+      margin-bottom: 15px;
+      cursor: pointer;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+      background: #f0f8ff;
+    }
+
+    body.dark .article-list-item {
+      background: #333;
+    }
+
+    .article-list-item:hover {
+      transform: translateY(-2px);
+    }
+
+    .article-list-item img {
+      width: 80px;
+      height: 60px;
+      object-fit: cover;
+    }
+
+    .article-list-item div {
+      padding: 5px 10px;
+      flex: 1;
+    }
+
+    .article-view {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      margin-top: 15px;
+    }
+
+    .article-view img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+
+    .article-view h2 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .article-view p {
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 4px;
+      border-top: 1px solid #ddd;
+      font-size: 14px;
+  position: fixed;   /* reste toujours visible */
+  bottom: 0;
+  left: 0;
+      width: 100%;
+      background-color: #f0f8ff;
+    }
+
+    body.dark footer {
+      border-color: #444;
+      background-color: #333;
+    }
+
+    /* Responsive Mobile */
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+        height: auto;
+      }
+
+      aside {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .article-list-item {
+        width: 100%;
+        margin: 5px 0;
+      }
+
+      .article-view {
+        padding: 10px;
+      }
+
+      .home-articles {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .home-article {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+ 
+    }
+
+.home-articles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  flex-direction: row; /* Les vignettes s'affichent en ligne */
+}
+
+.home-article {
+  display: flex; /* Contenu en row */
+  flex-direction: row; /* éléments internes alignés horizontalement */
+  align-items: center;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+  text-align: left;
+  background: #f0f8ff;
+  padding: 5px;
+}
+
+.home-article .text-container {
+  display: flex;
+  flex-direction: column; /* Texte principal au-dessus de la description */
+}
+
+body.dark .home-article {
+  background: #333;
+}
+
+.home-article img {
+  width: 30%;
+  height: auto;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.home-article h3 {
+  margin: 0;
+  padding: 0;
+  color: var(--primary);
+}
+
+.home-article p {
+  margin: 2px 0 0 0;
+}
+
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;   /* 👈 permet le retour à la ligne */
+  gap: 6px;
+  margin-top: 5px;
+}
+
+.tag {
+  background: #007acc;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.8em;
+  white-space: nowrap; /* 👈 évite que le texte d’un tag casse sur 2 lignes */
+}
+
+
+.hrTags {
+    margin-top: 15px;
+}
+
+body.dark .tag {
+  background: #555;
+}
+
+.similar-articles{
+    margin: 25px;
+    overflow: hidden;
+}
+/* ----------- Uniformisation des cartes ----------- */
+.article-list-item,
+.home-article {
+  display: flex;
+  
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: #f0f8ff;
+  transition: transform 0.2s;
+  height: 200px; /* 👈 même hauteur pour toutes les cartes */
+}
+
+.article-list-item img,
+.home-article img {
+  width: 100%;
+  height: 120px; /* 👈 même hauteur pour les images */
+  object-fit: cover;
+}
+
+.article-list-item div,
+.home-article .text-container {
+  flex: 1;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Version sombre */
+body.dark .article-list-item,
+body.dark .home-article {
+  background: #333;
+}
+
+/* Effet hover */
+.article-list-item:hover,
+.home-article:hover {
+  transform: translateY(-3px);
+}
+
+
+@media (min-width: 768px) {
+
+.home-article  {
+  flex: 1;
+  padding: 8px;
+  
+}
+
+
+.search-box input {
+  width: 90%;
+}
+
+
+header {
+  
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="logo">PixelsInfo</h1>
+    <div class="search-box">
+      <input type="text" id="search" placeholder="Rechercher...">
+    </div>
+    <button class="dark-toggle" id="darkBtn">🌙</button>
+  </header>
+
+  <main>
+    <aside id="article-list"></aside>
+    <div class="article-view" id="article-view" style="margin-top: 55px;">
+      <h2 >Accueil</h2>
+      
+    </div>
+  </main>
+  <hr>
+  <div class="similar-articles" id="similar-articles"></div>
+  <footer>© 2025 PixelsInfo — Prototype HTML/CSS/JS</footer>
+
+
+<script>
+/*
+  Script principal de WikiJeune
+  -----------------------------------------
+  - Gestion du mode sombre via le bouton darkBtn.
+  - Affichage dynamique des articles dans la barre latérale (desktop) ou sous l'article principal (mobile).
+  - Gestion de l'affichage de la page d'accueil avec les articles en aperçu.
+  - Fonction de recherche pour filtrer les articles.
+  - Responsive design géré via JavaScript et CSS.
+  - Interaction : cliquer sur le logo revient à la page d'accueil.
+*/
+    // Sélection des éléments principaux du DOM
+    const darkBtn = document.getElementById('darkBtn'); // bouton mode sombre
+    const body = document.body; // corps de la page pour appliquer le mode sombre
+    const search = document.getElementById('search'); // barre de recherche
+    const articleListDiv = document.getElementById('article-list'); // aside contenant la liste des articles
+    const articleViewDiv = document.getElementById('article-view'); // div affichant l'article principal
+    const logo = document.getElementById('logo'); // logo du site, clic pour revenir à l'accueil
+    const similarArticles = document.getElementById('similar-articles'); // emplacement ou affiché artciles simialire
+
+    let lastArticles = ""
+
+    // Activation / désactivation du mode sombre
+    darkBtn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+    });
+
+    // Clic sur le logo : retour à la page d'accueil
+    logo.addEventListener('click', () => {
+      renderHome();
+      articleViewDiv.scrollTop = 0; // remonter en haut de la page
+      similarArticles.innerHTML = '' //marche pas hje crois ...
+      search.value = '';
+    });
+
+    // Données des articles du site
+    const articles = [
+      {id:1,title:"Linux pour débutants",summary:"Introduction simple à Linux.",content:"<p>Linux n'est pas un OS (Operating Systeme), c'est un noyeau type Unix représenter par le fameux penguin 'Tux'. La 1er versons de Linux est sortie en 1991, dévellopé par Linus Torvalds (linux</p><img src='https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png'><p>Ubuntu, Fedora...</p>",tags : ['Linux', 'OS', ],cover:'articles/linux/tux.png'},
+      {id:2,title:"Programmation web moderne",summary:"Sites réactifs HTML/CSS/JS.",content:"<p>HTML structure...</p><img src='https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg'><p>JS rend interactif...</p>",tags : ['Web','Programmation' ],cover:'articles/html/html.jpg'},
+      {id:3,title:"L'histoire d'internet",summary:"Des premiers réseaux aux plateformes sociales.",content:"<p>Internet a commencé...</p><img src='https://t3.ftcdn.net/jpg/03/03/82/42/360_F_303824225_zF19IEjC2oONnIivUnIHP7ljBqEnXgmM.jpg'><p>Le web s'est développé...</p>",tags : ['Web', 'Histoire'],cover:'articles/web/web.jpg'}
+    ];
+
+function renderTags(tags) {
+  if (!tags || tags.length === 0) return "";
+
+  const shown = tags.slice(0, 2); // max 2 tags
+  return `<div class="tags">
+    ${shown.map(tag => 
+      `<span class="tag" onclick="event.stopPropagation(); searchTag('${tag}')">${tag}</span>`
+    ).join(" ")}
+  </div>`;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function displaySimilarArticles(article) {
+  const currentTags = article.tags || [];
+  const similarDiv = document.getElementById('similar-articles');
+  similarDiv.innerHTML = "";
+
+  // Filtrer les articles ayant au moins un tag en commun et exclure l'article actuel
+  const relatedArticles = articles.filter(a =>
+    a.id !== article.id && a.tags.some(tag => currentTags.includes(tag))
+  );
+
+  if (relatedArticles.length > 0) {
+    // Ajouter le titre avant la liste
+    const heading = document.createElement('h3');
+    heading.textContent = "Articles qui pourraient vous plaire";
+    similarDiv.appendChild(heading);
+
+    relatedArticles.forEach(a => {
+      const item = document.createElement('div');
+      item.className = 'article-list-item';
+      item.innerHTML = `
+        <div>
+          <img src='${a.cover}' alt='${a.title}'>
+          <div class="texte-container">
+            <strong>${a.title}</strong>
+            <p>${a.summary}</p>
+            ${renderTags(a.tags)}
+          </div>
+        </div>
+      `;
+      item.onclick = () => openArticle(a);
+      similarDiv.appendChild(item);
+    });
+  } else {
+        const heading = document.createElement('h3');
+    heading.textContent = "Aucun article similaire trouvé ..";
+    similarDiv.appendChild(heading);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+function searchTag(tag) {
+  const tagQuery = "/" + tag;   // ajouter le "/" devant le tag
+  search.value = tagQuery;      // met le tag dans la barre de recherche
+  renderHome(tagQuery);         // affiche les articles filtrés sur la page d'accueil
+  renderList(tagQuery);         // met aussi à jour la liste (desktop/mobile)
+  search.focus();
+}
+
+
+
+
+function renderList(filter = "") {
+  articleListDiv.innerHTML = ''; // vider la liste
+
+  let filteredArticles = [];
+
+  if (filter.startsWith("/")) {
+    // découper la recherche : premier mot = tag, reste = texte
+    const parts = filter.slice(1).split(" ");
+    const tagSearch = parts[0].toLowerCase().trim();
+    const textSearch = parts.slice(1).join(" ").toLowerCase().trim();
+
+    filteredArticles = articles.filter(a => {
+      const hasTag = a.tags && a.tags.some(t => t.toLowerCase() === tagSearch);
+      const matchesText =
+        !textSearch ||
+        a.title.toLowerCase().includes(textSearch) ||
+        a.summary.toLowerCase().includes(textSearch);
+
+      return hasTag && matchesText;
+    });
+
+  } else {
+    // recherche classique (titre + résumé)
+    filteredArticles = articles.filter(a =>
+      a.title.toLowerCase().includes(filter.toLowerCase()) ||
+      a.summary.toLowerCase().includes(filter.toLowerCase())
+    );
+  }
+
+  // afficher la liste
+  filteredArticles.forEach(article => {
+    const item = document.createElement('div');
+    item.className = 'article-list-item';
+    item.innerHTML = `
+      <img src='${article.cover}'>
+      <div class="texte-container">
+        <strong>${article.title}</strong>
+        <p>${article.summary}</p>
+        ${renderTags(article.tags)}
+      </div>`;
+    item.onclick = () => openArticle(article);
+    articleListDiv.appendChild(item);
+  });
+
+  // message si aucun résultat
+  if (filteredArticles.length === 0) {
+    articleListDiv.innerHTML = "<p>Aucun article trouvé.</p>";
+  }
+}
+
+
+
+
+
+
+
+
+
+
+function renderHome(filter="") {
+  articleViewDiv.innerHTML = `<h2>Accueil</h2><div class='home-articles' id='home-articles'></div>`;
+  const homeDiv = document.getElementById('home-articles');
+  homeDiv.innerHTML = '';
+
+  let filteredArticles;
+
+  if (filter.startsWith("/")) {
+    // recherche par tag
+    const tagSearch = filter.slice(1).toLowerCase().trim();
+    filteredArticles = articles.filter(a =>
+      a.tags && a.tags.some(t => t.toLowerCase().includes(tagSearch))
+    );
+  } else {
+    // recherche classique (titre + résumé)
+    filteredArticles = articles.filter(a =>
+      a.title.toLowerCase().includes(filter.toLowerCase()) ||
+      a.summary.toLowerCase().includes(filter.toLowerCase())
+    );
+  }
+    lastArticles = ""
+  // afficher les articles filtrés
+  filteredArticles.forEach(article => {
+    const item = document.createElement('div');
+    item.className = 'home-article';
+    item.innerHTML = `
+      <img src='${article.cover}'>
+      <div class="texte-container">
+        <strong>${article.title}</strong>
+        <p>${article.summary}</p>
+        ${renderTags(article.tags)}
+      </div>`;
+    item.onclick = () => openArticle(article);
+    homeDiv.appendChild(item);
+  });
+
+  // si aucun résultat
+  if (filteredArticles.length === 0) {
+    homeDiv.innerHTML = "<p>Aucun article trouvé.</p>";
+  }
+
+  articleListDiv.style.display = 'none'; // masquer la liste sur l'accueil
+}
+
+
+
+
+
+// Fonction pour afficher un article en entier
+function openArticle(article) {
+  // On peut récupérer les tags dans une variable
+  const articleTags = article.tags;  // articleTags est maintenant un tableau comme ['Linux', 'OS']
+
+  // Exemple : on peut les afficher dans la console
+//  console.log("Tags de l'article :", articleTags);
+  //console.log(article)
+  //console.log(article.id)
+    lastArticles = article
+  // Affichage de l'article principal
+  articleViewDiv.innerHTML = `
+    <div class='article-view'>
+      <h2>${article.title}</h2>
+          ${renderTags(article.tags)}
+          <hr class="hrTags" </hr>
+      ${article.content}
+    </div>
+  `;
+
+  renderList(search.value); // réaffiche la liste avec placement correct
+   displaySimilarArticles(article);
+}
+
+
+
+
+
+    // Gestionnaire de recherche : filtre les articles et met à jour l'accueil
+    search.addEventListener('input', (e) => {
+      renderList(e.target.value);
+      renderHome(e.target.value);
+      similarArticles.innerHTML = '' //marche pas hje crois ...
+    });
+
+    // Gestion du redimensionnement pour le responsive
+    window.addEventListener('resize', () => {
+      if(articleViewDiv.innerHTML.includes('<h2>Accueil</h2>')) {
+        // si on est sur l'accueil, on pourrait rafraîchir l'affichage
+      } else {
+        renderList(search.value); // sinon, ajuster la liste
+      }
+    });
+
+    
+
+
+//relier a btn croix a coter de recherche pour plus tard ??
+search.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    search.value = '';     // vide le champ de recherche
+    //renderHome();               // retourne à la page d'accueil
+    similarArticles.innerHTML = '' //marche pas hje crois ...
+    articleViewDiv.scrollTop = 0;
+    e.preventDefault();       // empêche l'effet par défaut (soumission)
+    search.blur();            // enlève le focus => arrêt de la saisie
+    console.log(lastArticles)
+    if (lastArticles == "") {
+        renderHome()
+        console.log("home")
+    }else {
+        openArticle(lastArticles)
+    }
+  }
+
+    if (e.key === "Enter") {
+    e.preventDefault();       // empêche l'effet par défaut (soumission)
+    search.blur();            // enlève le focus => arrêt de la saisie
+  }
+});
+
+
+
+
+
+
+
+
+
+// Initialisation : afficher la liste et l'accueil
+    //renderList(); //=> que pour sous arrtice
+    renderHome();
+
+
+</script>
+
+
+
+</body>
+</html>
