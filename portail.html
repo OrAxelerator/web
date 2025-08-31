@@ -6,58 +6,186 @@
   <link rel="icon" type="image/png" href="https://preview.redd.it/nether-portal-gif-i-got-it-from-the-game-files-and-upscaled-v0-841666uly00b1.gif?format=png8&s=8bf9a48a241ec2695a4c4457b409d0fbfa2feb8d" sizes="32x32">
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f4f8;
-      color: #222;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-    }
+    /* ---------- Responsive CSS (mobile-first) ---------- */
 
-    .container {
-      background: #fff;
-      padding: 60px 80px;
-      border-radius: 16px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-      text-align: center;
-      max-width: 700px;
-    }
+:root{
+  --bg: #f0f4f8;
+  --card-bg: #fff;
+  --accent: #3776AB;
+  --accent-2: #ffd900;
+  --text: #222;
+  --muted: #6b7280;
+}
 
-    h1 {
-      color: #3776AB;
-      margin-bottom: 40px;
-      font-size: 2.5em;
-    }
+/* Reset basique */
+*{box-sizing:border-box}
 
-    ul {
-      list-style-type: disc;
-      padding-left: 30px;
-      text-align: left; /* puces à gauche */
-      font-size: 1.3em;
-    }
+html,body{
+  height:100%;
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
 
-    li {
-      margin: 15px 0;
-    }
+/* Layout principal centré */
+body{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start; 
+  padding: 90px 20px 70px; 
+  min-height:100vh;
+}
 
-    a {
-      color: #3776AB;
-      text-decoration: none;
-      font-weight: bold;
-    }
 
-    a:hover {
-      text-decoration: underline;
-    }
+header {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;   /* centre horizontalement l'ensemble */
+  align-items: center;       /* centre verticalement l'image et le texte */
+  gap: 16px;                 /* espace entre l’image et le texte */
+  z-index: 999;
+}
+
+header *{ pointer-events:auto }
+
+
+.container{
+  width: 100%;
+  max-width: 900px;        /* limite sur grand écran */
+  background: var(--card-bg);
+  padding: 28px 22px;      /* mobile : padding réduit */
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  text-align:center;
+  overflow: hidden;
+  /* rendre le contenu scrollable si la fenêtre est petite */
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+}
+
+
+h1{
+  color: var(--accent);
+  margin: 8px 0 20px;
+  font-size: 1.8rem; 
+  line-height:1.05;
+}
+
+
+ul{
+  list-style: disc;
+  padding-left: 28px;
+  text-align: left;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: var(--text);
+  max-width: 760px;
+}
+
+li{ margin: 12px 0; }
+
+a{
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+a:hover,
+a:focus{ text-decoration: underline; outline: none }
+
+
+.avatar{
+  width: 72px;
+  height: 72px;
+  border-radius:50%;
+  border: 3px solid var(--accent-2);
+  margin-top: 6px;
+  transition: transform .18s ease, box-shadow .18s;
+  display:block;
+}
+.avatar:hover{ transform: scale(1.06); box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+
+
+header .avatar { width: 64px; height:64px; }
+header h1 {
+  margin: 0;          /* enlève marges par défaut */
+  font-size: 1.2rem;  /* ajuste si besoin */
+  color: #3776AB;
+}
+
+
+/* Footer simple et visible */
+footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #dfe6ea;
+  color: #333;
+  text-align:center;
+  padding: 10px 8px;
+  font-size: 0.9rem;
+  z-index: 20;
+}
+
+/* ---------- Desktop / tablette (plus d'espace) ---------- */
+@media (min-width: 768px){
+
+  body{ padding: 110px 40px 80px; }
+
+  .container{
+    padding: 48px 64px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    max-width: 900px;
+    max-height: calc(100vh - 160px);
+  }
+
+  h1{ font-size: 2.6rem; margin-bottom: 28px; }
+
+  ul{ font-size: 1.25rem; padding-left: 36px; }
+
+  li{ margin: 18px 0; }
+
+  header{
+    top: 18px;
+    gap: 24px;
+    
+  }
+  header h1{ display:block; font-size:1.1rem; color:var(--accent); pointer-events:auto }
+
+  header .avatar { width: 84px; height:84px; }
+
+  footer{ font-size: 1rem; padding: 12px 10px; }
+}
+
+/* ---------- Grand écran (large desktop) ---------- */
+@media (min-width: 1200px){
+  .container{ padding: 60px 100px; border-radius: 20px; }
+  h1{ font-size: 3rem; }
+  ul{ font-size: 1.4rem; padding-left: 40px; }
+}
+
+/* Accessibilité : focus visible */
+a:focus, button:focus, .avatar:focus { outline: 3px solid rgba(55,118,171,0.18); outline-offset: 3px }
+
+
   </style>
 </head>
 <body>
 
-  <div class="container">
+      <header>
+    <a href="https://www.youtube.com/@OrA-creation" target="_blank">
+      <img src="websites/python_programs/img/pp.png" alt="ma pp" class="avatar">
+    </a>
     <h1>Mes Sites Web :</h1>
+  </header>
+  
+  <div class="container">
+    
     <ul>
       <li><a href="https://oraxelerator.github.io/web/websites/python_programs" target="_blank">Python Programs</a></li>
       <li><a href="https://oraxelerator.github.io/web/mini-sites/wplace" target="_blank">Wplace</a></li>
@@ -70,5 +198,9 @@
     </ul>
   </div>
 
+
+  <footer>
+    <h4>Mon <a href="https://github.com/OrAxelerator" target="_blank">github</a></h4>
+  </footer>
 </body>
 </html>
