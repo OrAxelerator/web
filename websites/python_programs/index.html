@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mes Programmes Python</title>
+  <link rel="icon" type="image/png" href="img/favicon-32.png" sizes="32x32">
+  <style>
+    :root {
+      --bg: linear-gradient(#FFFAB8,#DEF7F9);
+      --card-bg: #f2ffff;
+      --text: #000;
+      --text-light: #333;
+      --highlight: #ffc800;
+      --btn-bg: #458dc7;
+      --btn-bg-hover: #3776AB;
+      --footer-bg: #eeeeee;
+      --footer-text: #aaa;
+      --text-paragraphe : #333
+    }
+
+    body.dark {
+      --bg: #111;
+      --card-bg: #222;
+      --text: #eee;
+      --text-light: #ccc;
+      --highlight: #ffc800;
+      --btn-bg: #3776AB;
+      --btn-bg-hover: #285A8F;
+      --footer-bg: #222;
+      --footer-text: #aaa;
+      --text-paragraphe : #ffffff
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      text-align:center;
+      margin:0;
+      padding:0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    h1 {
+      color: var(--highlight); 
+      margin: 20px 0;
+    }
+
+    /* bouton switch thème */
+    #theme-toggle {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      padding: 8px 12px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      background: var(--btn-bg);
+      color: white;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    #theme-toggle:hover {
+      background: var(--btn-bg-hover);
+    }
+
+    .game-container {
+      display: flex;
+      /*flex-wrap: wrap;*/
+      justify-content: center;
+      gap: 20px;  
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .game {
+      flex: 0 1 300px;
+      max-width: 300px;
+      background: var(--card-bg);
+      border-radius:10px;
+      padding:20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      border-top: 5px solid #3776AB;
+      transition: transform 0.2s ease, background 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .game:hover {
+      transform: translateY(-5px);
+    }
+
+    .game h2 {
+      margin-top:0;
+      color: var(--highlight);
+    }
+
+    .game p {
+      font-size: 0.95em;
+      color: var(--text-light);
+    }
+
+    .btn-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px; 
+      margin-top: 15px;
+    }
+
+    a.btn {
+      flex: 1;
+      padding: 10px 15px;
+      color:white;
+      background: var(--btn-bg);
+      border-radius: 25px;
+      text-decoration:none;
+      font-weight: bold;
+      transition: background 0.2s;
+      text-align: center;
+    }
+
+    a.btn:hover {
+      background: var(--btn-bg-hover);
+    }
+
+    .btn-yt {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--btn-bg);
+      border: 2px solid #ffffff;
+      transition: all 0.2s ease;
+    }
+
+    .btn-yt img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .btn-yt:hover {
+      border: 2px solid #f91818;
+      content: url("/yt_logo_red.png"); 
+    }
+
+    footer {
+      background-color: var(--footer-bg);
+      padding: 15px 10px;
+      text-align: center;
+      color: var(--footer-text);
+      font-size: 0.9em;
+      border-top: 2px solid #3776AB;
+      margin-top: auto;
+    }
+
+    footer span {
+      color: var(--highlight);
+      font-weight: bold;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid var(--highlight);
+      margin-top: 20px;
+      transition: transform 0.2s ease;
+    }
+
+    .avatar:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body class="light">
+  
+  <button id="theme-toggle">🌙</button>
+
+  <header>
+    <a href="https://www.youtube.com/@OrA-creation" target="_blank">
+      <img src="img/pp.png" alt="ma pp" class="avatar">
+    </a>
+    <h1>🎮 Mes Programmes Python</h1>
+  </header>
+
+  <div class="game-container"> 
+    <div class="game">
+      <h2>🐍 Snake</h2>
+      <p>Un petit jeu Snake codé avec Pygame.  </p>
+      <div class="btn-container">
+        <a class="btn" href="snake.py" download="snake.py">⬇ Télécharger</a>
+        <a class="btn-yt" href="https://www.youtube.com/@OrA-creation" target="_blank">
+          <img src="img/yt_logo_white.png" alt="YouTube">
+        </a>
+      </div>
+    </div>
+
+    <div class="game">
+      <h2>🏓 Pong</h2>
+      <p>Un pong 1V1 avec de la musique, des bruitages. Le premier à 10 points gagne. Fait avec pygame.  </p>
+      <div class="btn-container">
+          <a class="btn" href="https://github.com/OrAxelerator/python/raw/main/pygame/pong/Pong_v1.1.zip" download="Pong_v1.1.zip">⬇ Télécharger</a>
+        <a class="btn-yt" href="https://www.youtube.com/@OrA-creation" target="_blank">
+          <img src="img/yt_logo_white.png" alt="YouTube">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    ✨ Amusez-vous avec ces jeux, explorez le code, et pourquoi pas <span>les améliorer</span> à votre façon.  
+    Merci de me mentionner si vous publiez vos propres versions :)
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      if (body.classList.contains('dark')) {
+        toggleBtn.textContent = '☀️';
+      } else {
+        toggleBtn.textContent = '🌙';
+      }
+    });
+  </script>
+</body>
+</html>
