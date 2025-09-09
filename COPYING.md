@@ -1,4 +1,13 @@
-# PETIT TEST DE .MD
-### Pourquoi minecraft est un bon jeu :
-* il est cubique
-* Fun
+---
+layout: default
+title: COPYING
+---
+
+# Licence
+
+Contenu de ton fichier COPYING ici.
+
+## Navigation
+
+- [Accueil](index.md)
+- [COPYING](COPYING.md)
