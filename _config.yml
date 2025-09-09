@@ -1,14 +1,11 @@
-plugins:
-  - jekyll-relative-links
-relative_links:
-  enabled: true
-  collections: true
-include:
-  - CONTRIBUTING.md
-  - README.md
-  - LICENSE.md
+title: "Ma documentation"
+description: "Exemple de site GitHub Pages avec Jekyll"
+theme: minima
+
+# Pour que GitHub Pages ne désactive pas Jekyll
+markdown: kramdown
+
+# (Optionnel) Liens de navigation dans l’en-tête du thème "minima"
+header_pages:
+  - index.md
   - COPYING.md
-  - CODE_OF_CONDUCT.md
-  - CONTRIBUTING.md
-  - ISSUE_TEMPLATE.md
-  - PULL_REQUEST_TEMPLATE.md
