@@ -1,11 +1,18 @@
-title: "Ma documentation"
-description: "Exemple de site GitHub Pages avec Jekyll"
+title: "TestPedioa"
+description: "Test de site avec des .md et Jekyll"
 theme: minima
 
 # Pour que GitHub Pages ne désactive pas Jekyll
 markdown: kramdown
 
-# (Optionnel) Liens de navigation dans l’en-tête du thème "minima"
+# Liens affichés dans l’en-tête
 header_pages:
   - index.md
   - COPYING.md
+
+
+collections:
+  test:
+    output: true                
+    permalink: /test/:name      
+
