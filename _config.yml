@@ -1,5 +1,5 @@
 title: "TestPedioa"
-description: "Test de site avec des .md et Jekyll"
+#description: "Test de site avec des .md et Jekyll"
 theme: minima
 
 # Pour que GitHub Pages ne désactive pas Jekyll
