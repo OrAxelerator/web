@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertisseur</title>
+    <link rel="icon" href="fav.png" type="image/png">
+</head>
+<body>
+    
+
+   <style>
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f3f3f3, #e0e0e0);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+}
+
+h1 {
+    margin-top: 40px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 20px;
+    flex-wrap: wrap; 
+}
+
+section {
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    width: 280px;
+    padding: 25px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+section:hover {
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background-color: rgba(200, 200, 200, 0.2);
+    border-radius: 8px;
+    padding: 6px;
+    flex-wrap: wrap; /* évite le débordement sur mobile */
+}
+
+header li {
+    cursor: pointer;
+    padding: 6px 10px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+header li:hover {
+    background-color: #84bdff;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.2s ease;
+}
+
+input:focus {
+    border-color: #4f9bf1;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0078ff;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background-color: #005ecc;
+}
+
+button:active {
+    background-color: #012247;
+}
+
+#result {
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+
+/* Tablettes et écrans moyens */
+@media (max-width: 992px) {
+    .container {
+        gap: 40px;
+        margin-top: 40px;
+    }
+
+    section {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-top: 30px;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 600px) {
+    body {
+        gap: 15px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    section {
+        width: 90%;
+        padding: 20px;
+    }
+
+    input, button {
+        width: 80%;
+        font-size: 15px;
+    }
+
+    button {
+        margin: 10px 0 0 0;
+        max-width: 30%;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        margin-top: 20px;
+    }
+
+    header ul {
+        gap: 8px;
+    }
+
+    header li {
+        padding: 5px 8px;
+        font-size: 14px;
+    }
+}
+
+    </style>
+
+    <h1>Convertisseur de couleurs</h1>
+
+    <div class="container" id="container">
+        <section>
+            <header> 
+                <ul>
+                    <li><a id="rgb">RGB</a></li>
+                     <li><a id="hex">HEX</a></li>
+                </ul>
+            </header>
+
+            <input type="text" id="input" placeholder="" >
+
+        </section>
+    
+        <section>
+            <header>
+                <ul>
+                    <li><a id="btnRGBOutput">HEX</a></li>
+                    <li><a id="btnHexOutput">RGB</a></li>
+                </ul>
+            </header>
+
+            <input type="text" id="result" placeholder="" readonly>
+        </section>
+    </div>
+
+    <button id="copy">Copier</button>
+
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>
