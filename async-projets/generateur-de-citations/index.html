@@ -113,23 +113,6 @@ main {
 <header>
     <h1>Générateur de citations : </h1>
     <button id="buttonCitation">Afficher une citations.</button>
-    <button onclick="share()">Partager</button>
-
-<script>
-function share() {
-  if (navigator.share) {
-    navigator.share({
-      title: 'Mon super site',
-      text: 'Regarde ce site incroyable !',
-      url: 'https://exemple.com'
-    })
-    .then(() => console.log('Partage réussi'))
-    .catch((error) => console.log('Erreur de partage', error));
-  } else {
-    alert('Le partage natif n’est pas supporté sur cet appareil.');
-  }
-}
-</script>
 </header>
 
 

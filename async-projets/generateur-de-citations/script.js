@@ -10,7 +10,6 @@ async function main() {
   //tout le code est dans fonction main
   console.log("DATA:", citationsData);
 
-
   const btnCitation = document.getElementById("buttonCitation");
   const citationElement = document.getElementById("citation");
   const auteurElement = document.getElementById("auteur");
@@ -61,15 +60,17 @@ async function main() {
   };
 
 
-
   btnCitation.addEventListener("click", function() {
-    auteurImg.style.display = "";
+      auteurImg.style.display = "";
 
-    const citationAleatoire = getCitationAleatoire(citationsData)
-    
-    afficherCitationAleatoire(citationAleatoire);
-    displayImg(citationAleatoire.auteur); //je dois récup nom de l'auteur pour afficher img
+      let citationAleatoire;
+      do {
+          citationAleatoire = getCitationAleatoire(citationsData);
+      } while (citationAleatoire.auteur === auteurElement.textContent && citationsData.length > 1);
+
+      afficherCitationAleatoire(citationAleatoire);
+      displayImg(citationAleatoire.auteur);
   });
 
-  //faire btn partage  
+
 })();
