@@ -81,7 +81,7 @@ source :
 
 * Pub IBM :  https://youtu.be/9m54rKlErwA?si=dElowiiStbkMSs4d
 
-* https://fr.wikipedia.org/wiki/Apple_II#:~:text=Certains%20chiffres%20datant%20de%20fin,dont%20300%20000%20en%20France.
+* https://fr.wikipedia.org/wiki/Apple_II
 
 * https://oldcomputers.net/ibm5100.html
 
