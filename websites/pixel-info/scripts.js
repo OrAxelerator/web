@@ -35,7 +35,7 @@ function show404() {
   
   // Bouton retour à l'accueil
   document.getElementById("go-home").addEventListener("click", () => {
-    window.location.href = "./"; // => home
+    window.location.href = "./index.html"; // => home
   });
 }
 
@@ -74,7 +74,7 @@ async function search(texte) {   // Fonction de recherche simple
   const articleId = getArticleId();
   if (articleId) {
     // transmettre la recherche dans l'URL
-    window.location.href = "/?search=" + encodeURIComponent(query);
+    window.location.href += "/?search=" + encodeURIComponent(query);
     return; // STOP ici !
   }
 
@@ -166,7 +166,7 @@ function initSearch() {
 
 function openArticle(id) {
   if (!id) return;
-  window.location.href = "?articleId=" + id;
+  window.location.href += "?articleId=" + id;
 }
 //openArticle()
 
