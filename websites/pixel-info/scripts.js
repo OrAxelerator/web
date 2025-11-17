@@ -35,7 +35,7 @@ function show404() {
   
   // Bouton retour à l'accueil
   document.getElementById("go-home").addEventListener("click", () => {
-    window.location.href = "/"; // => home
+    window.location.href = "./"; // => home
   });
 }
 
