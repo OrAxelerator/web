@@ -43,7 +43,7 @@ Total          6,489,200
 Le mode d’affichage de l’Apple II utilisait un jeu de caractères ASCII sur 7 bits (US-ASCII), conçu pour afficher du texte en mode standard sur un écran de 40×24 caractères.
 
 
-![AppleII](https://github.com/OrAxelerator/web/blob/main/websites/pixel-info/articles/apleII.jpeg?raw=true)    
+![AppleII](https://github.com/OrAxelerator/web/blob/main/websites/pixel-info/articles/1/apleII.jpeg?raw=true)    
 
 
 L’Apple II a été principalement développé par Steve Wozniak, qui a conçu le circuit imprimé.
@@ -66,7 +66,7 @@ Deux ans plus tôt, IBM avait sorti le IBM 5100, le premier ordinateur personnel
 
 * Masse : environ 25 kg
 
-![IBM5100](https://raw.githubusercontent.com/OrAxelerator/web/refs/heads/main/websites/pixel-info/articles/IMB5100.jpg)
+![IBM5100](https://raw.githubusercontent.com/OrAxelerator/web/refs/heads/main/websites/pixel-info/articles/1/IMB5100.jpg)
 
 
 Cette machine n’a pas connu le même succès que l’Apple II en raison de ses caractéristiques.
