@@ -72,11 +72,15 @@ async function search(texte) {   // Fonction de recherche simple
   
   // Si on est sur un article, revenir à la home
   const articleId = getArticleId();
-  if (articleId) {
-    // transmettre la recherche dans l'URL
-    window.location.href += "/?search=" + encodeURIComponent(query);
-    return; // STOP ici !
-  }
+if (articleId) {
+  // Crée l'URL proprement : page d'accueil + param search
+  const url = new URL(window.location.origin + window.location.pathname);
+  url.searchParams.set("search", query);
+  window.location.href = url.toString();
+  return;
+}
+
+
 
   
   const homeList = document.getElementById("home-list");
@@ -168,7 +172,7 @@ function openArticle(id) {
   if (!id) return;
   window.location.href += "?articleId=" + id;
 }
-//openArticle()
+//openArticle() inutile
 
 
 // Récupération de l'ID de l'article depuis l'URL
