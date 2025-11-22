@@ -271,7 +271,21 @@ function addArticle(titre, icone, auteur, id) {
   console.log(homeList)
 }
 
+function createTags(list) {
+  if (list.length === 0) {
+    return false
+  }else {
+    const container = document.getElementById("tags-container");
 
+
+    list.forEach(tag => {
+    const el = document.createElement("div");
+    el.className = "tag";
+    el.textContent = tag;
+    container.appendChild(el);
+    });
+  }
+}
 // Charge un article complet dans la page de l'article
 async function loadArticle(articleId) {
   try {
@@ -279,7 +293,8 @@ async function loadArticle(articleId) {
 
     document.getElementById("titre").textContent = data.titre || "(pas de titre)";
     document.getElementById("auteur").textContent = data.auteur || "(anonyme)";
-    document.getElementById("tags").textContent = (data.tags || []).join(", ");
+    //document.getElementById("tags").textContent = (data.tags || []).join(", "); // TAAAAGS
+    createTags(data.tags)
     if (data.icone) document.getElementById("icone").src = data.icone;
 
     if (data.url_md) {
