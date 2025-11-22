@@ -31,7 +31,7 @@ function show404() {
   document.getElementById("article").style.display = "none";
   
   // Afficher la 404
-  document.getElementById("page-404").style.display = "block";
+  document.getElementById("page-404").style.display = "flex";
   
   // Bouton retour à l'accueil
   document.getElementById("go-home").addEventListener("click", () => {
