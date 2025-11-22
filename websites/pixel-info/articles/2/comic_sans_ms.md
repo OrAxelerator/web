@@ -1,6 +1,6 @@
 ![exemple](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.mos.cms.futurecdn.net%2FCPvucxPLEw5ng44HBMyuxD.jpg&f=1&nofb=1&ipt=c00556a8bb8857bd23b2f4b18e9781d9335ec9746441c4c6871ae820776cbdbf)
 
-![Comic Sans](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/ComicSansSpec3.svg/langfr-600px-ComicSansSpec3.svg.png)
+<img class="full-screen" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/ComicSansSpec3.svg/langfr-600px-ComicSansSpec3.svg.png" alt="Comic Sans" />
 
 Comic Sans MS est une police d'écriture très populaire et controversée,
 dessinée par Vincent Connare pour Microsoft en 1995.

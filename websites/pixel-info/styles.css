@@ -30,6 +30,10 @@
     width: 5em;
     height: 5em;
   }
+  .full-screen {
+    width: 80%;
+    margin: 0 auto;
+  }
 
   .logo a{
     color: var(--text-on-header);

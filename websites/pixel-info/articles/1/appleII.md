@@ -1,5 +1,5 @@
 # l'Apple II
-![Apple II](https://images.computerhistory.org/revonline/images/102626726p-03-02.jpg?w=600)
+<img class="full-screen" src="https://images.computerhistory.org/revonline/images/102626726p-03-02.jpg?w=600" alt="Apple II" />
 
 ### Histoire : 
 L’Apple II est le deuxième ordinateur construit par Apple.
@@ -43,7 +43,7 @@ Total          6,489,200
 Le mode d’affichage de l’Apple II utilisait un jeu de caractères ASCII sur 7 bits (US-ASCII), conçu pour afficher du texte en mode standard sur un écran de 40×24 caractères.
 
 
-![AppleII](https://github.com/OrAxelerator/web/blob/main/websites/pixel-info/articles/1/apleII.jpeg?raw=true)    
+<img class="full-screen" src="https://github.com/OrAxelerator/web/blob/main/websites/pixel-info/articles/1/apleII.jpeg?raw=true" alt="AppleII" />   
 
 
 L’Apple II a été principalement développé par Steve Wozniak, qui a conçu le circuit imprimé.
@@ -66,8 +66,7 @@ Deux ans plus tôt, IBM avait sorti le IBM 5100, le premier ordinateur personnel
 
 * Masse : environ 25 kg
 
-![IBM5100](https://raw.githubusercontent.com/OrAxelerator/web/refs/heads/main/websites/pixel-info/articles/1/IMB5100.jpg)
-
+<img class="full-screen" src="https://raw.githubusercontent.com/OrAxelerator/web/refs/heads/main/websites/pixel-info/articles/1/IMB5100.jpg" alt="IBM5100" />
 
 Cette machine n’a pas connu le même succès que l’Apple II en raison de ses caractéristiques.
 En avril 1982, huit mois après son lancement, seulement 50 000 unités avaient été vendues.
