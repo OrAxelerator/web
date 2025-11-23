@@ -2,7 +2,7 @@
   "name": "Pixel-Info",
   "short_name": "Pi",
   "description": "Espace de partage de sujet tech ",
-  "start_url": "/",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#2e7bff",
   "theme_color": "#2e7bff",
