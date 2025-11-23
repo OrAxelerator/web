@@ -272,9 +272,14 @@ function addArticle(titre, icone, auteur, id) {
 }
 
 function createTags(list) {
-  if (list.length === 0) {
-    return false
-  }else {
+  if (!list.length || list[0] === "") {
+    console.log("no tags")
+    const tagsContainer = document.getElementById("tags-container");
+    tagsContainer.style.display = "none";
+  return;
+  }
+  
+    console.log(list[0])
     const container = document.getElementById("tags-container");
 
 
@@ -285,7 +290,7 @@ function createTags(list) {
     container.appendChild(el);
     });
   }
-}
+
 // Charge un article complet dans la page de l'article
 async function loadArticle(articleId) {
   try {
