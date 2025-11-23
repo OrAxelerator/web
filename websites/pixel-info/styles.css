@@ -41,6 +41,7 @@
     gap: 8px;
     align-items: center;
     flex-wrap: wrap;
+    margin-bottom: 0.5em;
     }
     #tags-container > p {
       width: 50px;
@@ -51,7 +52,7 @@
   background-color: #2e7bff;
   color: #fff;
   border-radius: 10px;
-  padding: 6px 10px;
+  padding: 4px 8px;
   font-size: 14px;
   width: fit-content;
   }
