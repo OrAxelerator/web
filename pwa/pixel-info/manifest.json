@@ -1,0 +1,21 @@
+{
+  "name": "Pixel-Info",
+  "short_name": "Pi",
+  "description": "Espace de partage de sujet tech ",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#2e7bff",
+  "theme_color": "#2e7bff",
+  "icons": [
+    {
+      "src": "https://github.com/OrAxelerator/web/raw/main/websites/pixel-info/Pixel-info_logo.png?raw=true",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://github.com/OrAxelerator/web/raw/main/websites/pixel-info/Pixel-info_logo.png?raw=true",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Pixel-Info</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script type="module" src="./scripts.js" defer ></script>
+  <link rel="icon" href="./Pixel-info_logo.png" type="image/png" sizes="521x512">
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#000000">
+
+</head>
+<body>
+
+
+<header class="header">
+  <div class="logo">
+    <a href="./index.html">Pixel Info</a>
+  </div>
+
+  <div class="search">
+    <input type="text" placeholder="Rechercher..." id="recherche" />
+  </div>
+
+  <button class="search-icon" aria-label="Rechercher" id="BtnLoupe">
+    🔍
+  </button>
+</header>
+
+
+
+
+
+<div id="page-404" style="display:none; text-align:center; padding:50px;">
+  <h1>404 - Page Not Found</h1>
+  <p>Oops! La page que vous cherchez n'existe pas.</p>
+  <img src="https://meme-templates.com/uploads/1640209275.jpeg" alt="Mr Bean 404">
+  <button id="go-home">CLIQUER ICI POUR REVENIR PAGE D'ACCUEIL</button>
+
+</div>
+
+
+      
+  <div id="home" style="display:none">
+    <h1>Bienvenue sur Pixel Info</h1>
+    <!-- Liste d’aperçus d’articles (créée dynamiquement par JS) -->
+    <div class="home-list" id="home-list">
+    </div>
+  </div>
+
+  <!-- =========================
+       PAGE ARTICLE
+       ========================= -->
+  <div id="article" style="display:none">
+    <!-- Icône de l'article -->
+    <div id="header-article">
+      <div id="icone-header">
+        <img id="icone" alt="Icône de l'article">
+      </div>
+      <div id="data-article">
+        <!-- Titre de l'article -->
+        <h1 id="titre"></h1>
+      
+       
+       
+       <!-- Auteur et tags -->
+       <p>Auteur : <span id="auteur"></span></p>
+        <div id="tags-container">
+          <p><strong>Tags :</strong></p>
+        </div>
+
+      </div>  
+    </div>
+
+    <!-- Contenu Markdown -->
+    <div id="md-box"></div>
+  </div>
+
+</body>
+</html>
