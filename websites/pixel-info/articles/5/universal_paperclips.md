@@ -41,7 +41,7 @@ Déclaration de Bletchley, 2023, signée par **l’Union européenne** et **28 p
 D’après le Centre pour la Sécurité de l’IA (CSIA), la communauté internationale doit agir car l’évolution des capacités de l’IA va plus vite que la législation mondiale, et en plus dans un contexte politique/économique mondial où des entreprises technologiques sont financées par des États, comme via le programme Stargate aux États-Unis, ou grâce aux fonds issus du Sommet de l’IA en France. Ce qui complexifie la situation.
 
 >*Même au cœur de tensions géopolitiques, il existe des domaines où les nations ont un intérêt commun à coopérer. L'histoire l'a montré avec la régulation des armes nucléaires, biologiques et chimiques. Aujourd'hui, face à l'IA, l'humanité doit s'accorder sur les capacités et les usages qui présentent des dangers si graves qu'ils doivent être universellement proscrits.*
-**"**
+
 
 ---
 Source : 
