@@ -1,0 +1,163 @@
+:root{
+  --panel-bg: rgb(49,49,49);
+  --block-bg: rgb(40,40,40);
+  --gap: 10px;           
+  --divider-w: 2px;     
+  --block-size: 80px;   
+  --side-padding: 10px;
+}
+#divider {
+    visibility: hidden;
+}
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;}
+header{background:gray; padding:10px; text-align:center;}
+#main{
+  height: calc(100dvh - 52px); 
+  display: flex;
+  flex-direction: row; 
+  align-items: stretch;
+  background: #f7f7f7;
+}
+
+
+.column{
+  width: calc(50% - calc(var(--divider-w) / 2));
+  background: var(--panel-bg);
+  padding: var(--side-padding);
+  display: flex;
+  align-items: center;       
+  justify-content: center;   
+  overflow: hidden;
+}
+
+
+
+.blocks-wrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  align-items: center;       
+  justify-content: flex-start; 
+  padding-top: calc(var(--side-padding) / 2);
+  padding-bottom: calc(var(--side-padding) / 2);
+}
+
+
+.block{
+  width: var(--block-size);
+  height: var(--block-size);
+  background: var(--block-bg);
+  color: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.9rem, 2.2vw, 1.4rem);
+  border: 3px solid transparent;
+  overflow: hidden;
+  text-align: center;
+  padding: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+
+.block img{
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  display: block;
+}
+
+
+.block.selected{
+  border-color: #4CAF50;
+}
+#getXp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1em;
+    border-radius: 25px;
+    background-color: #4CAF50;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+#logo {
+    width: 15em;
+    max-width: 80%;
+    height: auto;
+    filter: drop-shadow(0 0 8px #0005);
+    border-radius: 10px;
+}
+
+@media (max-width: 420px){
+  :root{ --gap: 8px; --side-padding: 6px; --divider-w: 1px; }
+  header{ font-size: 0.95rem; padding:8px; }
+}
+html, body{
+    margin:0;
+    padding:0;
+    height:100%;
+     touch-action: none; 
+  overscroll-behavior: none;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+    font-family:system-ui, sans-serif;
+}
+
+header{
+    background:gray;
+    padding:8px;
+    text-align:center;
+}
+
+#main{
+    flex:1;
+    display:flex;
+    background:rgb(40,40,40);
+}
+
+
+#items,
+#reponses{
+    flex:1;
+    background-color:rgb(49,49,49);
+    padding:10px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+
+.block{
+    flex:1;                         
+    width: 100%;
+    background:rgb(40,40,40);
+    color:white;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.8em;
+    
+}
+
+
+.block img{
+    max-height:80%;
+    max-width:80%;
+    object-fit:contain;
+}
+
+
+.block.selected{
+    border-color:#4CAF50;
+}

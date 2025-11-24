@@ -1,0 +1,21 @@
+{
+  "name": "Guess the FLAG",
+  "short_name": "GTF",
+  "description": "mini game",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#282828",
+  "theme_color": "#4CAF50",
+  "icons": [
+    {
+      "src": "https://github.com/OrAxelerator/web/raw/main/pwa/guess_the_flag/assets/logo_gtf.png?raw=true",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://github.com/OrAxelerator/web/raw/main/pwa/guess_the_flag/assets/logo_gtf.png?raw=true",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
