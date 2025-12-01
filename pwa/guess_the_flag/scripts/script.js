@@ -8,6 +8,7 @@ let selectedItems = [];
 let selectedReponses = [];
 const MAX_SELECTIONS = 1;
 
+const playPop = createSoundPlayer("./assets/sound/pop.mp3");
 
 let totScore = parseInt(localStorage.getItem("points")) || 0;
 
@@ -45,6 +46,7 @@ function setupSelectionListeners() {
 
   itemsElement.addEventListener("click", e => {
     const block = e.target.closest(".block");
+    console.log(block)
     if (!block) return;
     toggleSelection(block, selectedItems);
     checkMatch();
@@ -64,11 +66,30 @@ function toggleSelection(block, selectedArray) {
     block.classList.remove("selected");
     selectedArray.splice(selectedArray.indexOf(block),1);
   } else {
-    if (selectedArray.length >= MAX_SELECTIONS) return;
-    block.classList.add("selected");
-    selectedArray.push(block);
+    if (selectedArray.length < MAX_SELECTIONS) {
+      block.classList.add("selected");
+      selectedArray.push(block);
+    }else { //already 1 selected => change
+      selectedArray[0].classList.remove("selected");
+      block.classList.add("selected");
+      selectedArray.pop(0);
+      selectedArray.push(block);
+    }
   }
 }
+function createSoundPlayer(src) {
+  const audio = new Audio(src);
+
+  return () => {
+    audio.currentTime = 0; // remet au début pour rejouer directement
+    audio.play();
+  };
+}
+
+
+
+
+
 
 
 function checkMatch(){
@@ -78,10 +99,9 @@ function checkMatch(){
     const reponseCountry = data[reponseIndex].country;
 
     if (itemData === reponseCountry){
+      playPop();
       score++;
-      
-
-      
+   
       selectedItems[0].style.visibility = "hidden";
       selectedReponses[0].style.visibility = "hidden";
 
