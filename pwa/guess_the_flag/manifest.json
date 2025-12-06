@@ -3,8 +3,7 @@
   "short_name": "GTF",
   "description": "Mini-jeu pour deviner les drapeaux du monde.",
   
-  "start_url": "/index.html",
-  "scope": "/",
+  "start_url": "./index.html",
   
   "display": "standalone",
   "orientation": "portrait-primary",
