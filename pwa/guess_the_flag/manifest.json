@@ -15,7 +15,12 @@
   "icons": [
 
     {
-      "src": "https://github.com/OrAxelerator/web/blob/main/pwa/guess_the_flag/assets/gtf_logo.png?raw=true",
+      "src": "https://github.com/OrAxelerator/web/blob/main/pwa/guess_the_flag/assets/gtf_logo_app_192.png?raw=true",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://github.com/OrAxelerator/web/blob/main/pwa/guess_the_flag/assets/gtf_logo_app_512.png?raw=true",
       "sizes": "512x512",
       "type": "image/png"
     }
