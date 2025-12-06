@@ -1,12 +1,10 @@
-//direct sauv json pays pour pouvoir jouer en hors co + PWA
 const progressBarElement = document.getElementById("progressBar");
 const playBtn = document.getElementById("play");
 const areneElement = document.getElementById("arene");
+const iconeContainer = document.getElementById("iconeContainer");
 
-const levelText = ["Noob", "Medium", "avanced", "skill", "hacker", "god"];
-const levelImg = ["compass1.png", "compass2.png", "compass3.png"];
 let points = Number(localStorage.getItem("points")) || 0;
-//localStorage.setItem("points", 5) // TEST
+const param = document.getElementById("param");
 let level = Math.floor(points / 50) + 1;
 
 console.log("points : ",points);
@@ -20,23 +18,51 @@ playBtn.addEventListener("click", function() {
 })
 
 
+function isPWA() {
+    return window.matchMedia('(display-mode: standalone)').matches
+        || window.navigator.standalone === true;
+}
+
+function showPopup(title, message) {
+    if (!localStorage.getItem("popup_show")) {
+        const popup = document.getElementById("popup");
+        document.getElementById("popup-title").textContent = title;
+        document.getElementById("popup-message").textContent = message;
+
+        popup.style.display = "flex"; 
+    }
+}
+
+document.getElementById("popup-close").onclick = () => {
+    document.getElementById("popup").style.display = "none";
+    localStorage.setItem("popup_show", "yes");
+};
+
+if (isPWA()) {
+    console.log("Tu es dans l'app PWA");
+} else {
+    console.log("Tu es dans le navigateur");
+    showPopup(
+        "Le saviez-vous ?",
+        "Dans Partager > Plus > Ajouter à l'écran d'accueil, vous pouvez installer l'app."
+    );
+}
 
 
 
-function updateLevelElement (level){
-    console.log("level : ", level)
+function updateLevelElement (){
+    
     const text = document.createElement("p");
     const img = document.createElement("img");
     
-    text.textContent = "points : "+ points + " | " + levelText[level - 1];
-    img.src = "./assets/" + levelImg[level-1]; //TODO levelImg
+    text.textContent = "Score : "+ points;
 
+    img.id = "profil_picture";
     text.id = "textLevel";
 
     areneElement.appendChild(text);
-    areneElement.appendChild(img);
+    iconeContainer.appendChild(img);
 }
-
 
 
 
@@ -48,6 +74,7 @@ function updateProgressBar(n) {
     progressBarElement.value = percentage;
     
 }
+
 function updatePointsElements(n) {
     updateProgressBar(n);
     updateLevelElement(Math.floor((n/50) +1));

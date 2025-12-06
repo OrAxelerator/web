@@ -18,17 +18,88 @@
     </header>
 
     <main id="main">
+
+
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <h2 id="popup-title"></h2>
+    <p id="popup-message">En allanz dans partagez > plus > Ajouter a l'écran d'acceuil</p>
+    <button id="popup-close">OK je vais voir</button>
+  </div>
+</div>
+
+
+
+
+
         <div id="arene">
             <!--put img with arene like CR-->
+            <div id="iconeContainer">
+                <img id="profil_picture" src="">
+            </div>
         </div>
         <progress max="100" value="0" id="progressBar"></progress>
         <p>difficulté : </p>
         <select id="select">
-            <option value="random">random</option>
-            <option value="random">EZ (not disponible)</option>
-            <option value="random">hard (not disponible)</option>
+            <option value="random">Random</option>
+            <option value="random">Easy (not disponible)</option>
+            <option value="random">Hard (not disponible)</option>
         </select>
         <button id="play">Play</button>
     </main>
+
+    <input type="file" id="choose-img" accept="image/*" style="display:none;">
+
+
+
+
+
+<script>
+
+    const profil_picture = document.getElementById("profil_picture");
+    const profil_container = document.getElementById("iconeContainer");
+function initImageSelector(btnId) {
+    const container = document.getElementById(btnId);
+    const input = document.getElementById('choose-img');
+
+    // open gallery
+    profil_container.addEventListener('click', () => input.click());
+
+    // change img
+    input.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = () => {
+            const base64 = reader.result;
+
+            localStorage.setItem('profilImage', base64);
+            profil_picture.src = base64;
+        };
+        reader.readAsDataURL(file);
+    });
+}
+
+
+
+// load img if already load
+window.addEventListener('load', () => {
+    const saved = localStorage.getItem('profilImage');
+
+    if (saved) {
+        profil_picture.src = saved;
+        console.log("image chargée depuis localStorage");
+    } else {
+        console.log("chargé depuis base")
+        profil_picture.src = "./assets/profil.png";
+        console.log("image par défaut");
+    }
+});
+
+
+initImageSelector('btn-choose');
+</script>
+
 </body>
 </html>

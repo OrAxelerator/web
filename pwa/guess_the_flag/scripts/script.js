@@ -8,7 +8,7 @@ let selectedItems = [];
 let selectedReponses = [];
 const MAX_SELECTIONS = 1;
 
-const playPop = createSoundPlayer("./assets/sound/pop.mp3");
+
 
 let totScore = parseInt(localStorage.getItem("points")) || 0;
 
@@ -79,17 +79,35 @@ function toggleSelection(block, selectedArray) {
 }
 function createSoundPlayer(src) {
   const audio = new Audio(src);
+  let buffer;
 
-  return () => {
-    audio.currentTime = 0; // remet au début pour rejouer directement
-    audio.play();
+  // Charger le son et le stocker dans un buffer
+  audio.addEventListener('canplaythrough', () => {
+    buffer = audio;
+  });
+
+  return {
+    play: () => {
+      if (buffer) {
+        // Crée une nouvelle instance pour pouvoir rejouer sans attendre la fin
+        const newAudio = buffer.cloneNode();
+        newAudio.currentTime = 0;
+        newAudio.play();
+      } else {
+        console.warn("Le son n'est pas encore chargé");
+      }
+    }
   };
 }
 
+const player = createSoundPlayer('./assets/sound/pop.mp3');
 
 
 
 
+
+
+let match = 0
 
 
 function checkMatch(){
@@ -99,7 +117,8 @@ function checkMatch(){
     const reponseCountry = data[reponseIndex].country;
 
     if (itemData === reponseCountry){
-      playPop();
+      player.play(); 
+      match ++;
       score++;
    
       selectedItems[0].style.visibility = "hidden";
@@ -110,21 +129,52 @@ function checkMatch(){
 
       selectedItems = [];
       selectedReponses = [];
+    }else {
+      console.log("raté")
+      score --;
     }
 
-    if (score === range){
+    if (match === range){
+      console.log(score);
+      if (score <= 0) {
+        console.log("néga")
+        score = 2;  
+      }else if (score === range) {
+        console.log("PERFECT")
+        score = score*2;
+        score += 4;
+      }else  {
+        console.log("posi")
+        score = score*2;
+      }
+      console.log(score);
       const btn = document.createElement("button");
+      const btnReoad = document.createElement("button");
+      const XP = document.createElement("h1");
+
       btn.id = "getXp";
-      btn.textContent = "Réclamez "+ score*2 + " XP";
+      btnReoad.id = "reload";
+      XP.id = "xp"
+
+      btn.textContent = "Accueil";
+      btnReoad.textContent = "Relancez une partie";
+      XP.textContent = score + " XP !"
+
+      document.body.appendChild(btnReoad);
       document.body.appendChild(btn);
+      document.body.appendChild(XP)
 
       btn.addEventListener("click", function(){
-        console.log("click")
-        score = score*2;
+
         addPoints(score);
         console.log(score);
         window.location.href = "index.html";
       });
+      btnReoad.addEventListener("click", () => {
+        addPoints(score);
+        console.log(score);
+        window.location.href = "jeu.html?gametype="+ gameType ;
+      })
     }
   }
 }
@@ -168,8 +218,6 @@ function createQuizBlocks(n){
 
   
 }
-
-
 
 
 function initQuiz(gametype){
