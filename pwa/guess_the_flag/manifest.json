@@ -15,10 +15,9 @@
   "icons": [
 
     {
-      "src": "/assets/gtf_logo.png",
+      "src": "./assets/gtf_logo.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
+      "type": "image/png"
     }
   ]
 }
